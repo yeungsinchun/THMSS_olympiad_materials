@@ -1,0 +1,17 @@
+\beamer@sectionintoc {1}{Motivation}{9}{0}{1}
+\beamer@sectionintoc {2}{Circle}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{Inscribed Angle Theorem}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{The Extended Law of Sine}{26}{0}{2}
+\beamer@subsectionintoc {2}{3}{Relationship between Circumradius and Area}{31}{0}{2}
+\beamer@subsectionintoc {2}{4}{Relationship between Circumradius and Side Lengths}{32}{0}{2}
+\beamer@sectionintoc {3}{Cyclic Quadrilateral}{33}{0}{3}
+\beamer@subsectionintoc {3}{1}{Properties for Cyclic Quadrilateral}{39}{0}{3}
+\beamer@subsectionintoc {3}{2}{Test for Cyclic Quadrilateral}{40}{0}{3}
+\beamer@sectionintoc {4}{Power Chord Theorem and its Converse}{42}{0}{4}
+\beamer@sectionintoc {5}{Properties of Tangent to Circle}{60}{0}{5}
+\beamer@subsectionintoc {5}{1}{Angle in Alternate Segment}{60}{0}{5}
+\beamer@subsectionintoc {5}{2}{Other Properties of Tangents}{64}{0}{5}
+\beamer@sectionintoc {6}{Example Problems}{67}{0}{6}
+\beamer@subsectionintoc {6}{1}{Prelim 2020 Q6}{67}{0}{6}
+\beamer@subsectionintoc {6}{2}{Prelim 2022 Q16}{76}{0}{6}
+\beamer@sectionintoc {7}{Practice Problems}{86}{0}{7}
