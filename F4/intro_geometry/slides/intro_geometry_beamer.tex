@@ -14,6 +14,8 @@
 \title{Introduction to Euclidean Geometry}
 
 \usetheme{Madrid}
+\setbeamersize{text margin left=6mm,text margin right=6mm}
+
 \author{T Yeung}
 \institute{THMSS}
 \date{2024}
@@ -59,7 +61,7 @@
 \section{Circle}
 \subsection{Inscribed Angle Theorem}
 \begin{frame}{Inscribed angle theorem}
-		\begin{tikzpicture}[radius=1.5cm,a/.style={magenta},b/.style={blue}]
+	\begin{tikzpicture}[radius=1.5cm,a/.style={magenta},b/.style={blue}]
 		\coordinate[label=$O$] (O) at (0,0);
 		\draw (O) circle;
 		\draw (O) -- ++(30:1.5cm) coordinate[label=30:$A$](A);
@@ -91,13 +93,9 @@
 		\tkzMarkAngle[size=0.35,a](A,O,B)
 		\tkzMarkAngle[size=0.35,b](A,C,B)
 	\end{tikzpicture}
-	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{theorem}[Inscribed Angle Theorem]
-				Let $O$ denotes the center of circle, $A$ and $B$ be any two points on the circle, then $\color{red}{\angle AOB} = \color{blue}{2 \angle ACB}$.
-			\end{theorem}
-		\end{minipage}
-	\end{center}
+	\begin{theorem}[Inscribed Angle Theorem]
+		Let $O$ denotes the center of circle, $A$ and $B$ be any two points on the circle, then $\color{red}{\angle AOB} = \color{blue}{2 \angle ACB}$.
+	\end{theorem}
 \end{frame}
 \begin{frame}{Inscribed Angle Theorem (Proof for case I)}
 	\begin{columns}
@@ -226,13 +224,9 @@
 			\tkzMarkRightAngle(A,C',B)
 		\end{tikzpicture}
 	\end{center}
-	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{corollary}[$\angle$ in semi circle]
-				Let $AB$ be a diameter of circle, $C$ be any point on a circle. Then $\angle ACB = 90^o$ (because the angle at centre is $180^o$).
-			\end{corollary}
-		\end{minipage}
-	\end{center}
+	\begin{corollary}[$\angle$ in semi circle]
+		Let $AB$ be a diameter of circle, $C$ be any point on a circle. Then $\angle ACB = 90^o$ (because the angle at centre is $180^o$).
+	\end{corollary}
 \end{frame}
 \begin{frame}{Inscribed Angle Theorem (Corollary II)}
 	\begin{center}
@@ -254,28 +248,24 @@
 			\tkzMarkAngle[size=0.5](A,C',B)
 		\end{tikzpicture}
 	\end{center}
-	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{corollary}[angle at circumference $\propto$ arc length]
-				The arc is proportional to the angle at circumference (center).
-			\end{corollary}
-		\end{minipage}
-	\end{center}
+	\begin{corollary}[angle at circumference $\propto$ arc length]
+		The arc is proportional to the angle at circumference (center).
+	\end{corollary}
 \end{frame}
 
 \subsection{The Extended Law of Sine}
 \begin{frame}{The Extended Law of Sine}
 	\begin{columns}
 		\column{0.4\textwidth}
-			\begin{center}
-				\begin{tikzpicture}
-					\tkzDefPoints{0/0/A,3/0/B,2/2/C}
-					\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O} \tkzGetLength{rayon}
-					\tkzDrawCircle[new,dashed,R](O, \rayon pt)
-					\tkzDrawPolygon(A,B,C)
-					\tkzAutoLabelPoints[center=O](A,B,C)
-				\end{tikzpicture}
-			\end{center}
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzDefPoints{0/0/A,3/0/B,2/2/C}
+				\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O} \tkzGetLength{rayon}
+				\tkzDrawCircle[new,dashed,R](O, \rayon pt)
+				\tkzDrawPolygon(A,B,C)
+				\tkzAutoLabelPoints[center=O](A,B,C)
+			\end{tikzpicture}
+		\end{center}
 		\column{0.6\textwidth}
 		\begin{exampleblock}{Naming Convention}
 			By convention, in $\Delta ABC$, the opposite side to angle $A$ is named $a$ (similarly for $B$ and $C$), $\mathcal{R}$ denotes the circumradius of $\Delta ABC$, and $r$ denotes the inradius of $\Delta ABC$.
@@ -292,55 +282,51 @@
 \begin{frame}{The Extended Law of Sine (Proof)}
 	\begin{columns}
 		\column{0.4\textwidth}
-			\begin{center}
-				\begin{tikzpicture}
-					\tkzDefPoints{0/0/A,3/0/B,2/2/C}
-					\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O} \tkzGetLength{rayon}
-					\tkzDrawCircle[new,dashed,R](O, \rayon pt)
-					\tkzDrawPolygon(A,B,C)
-					\tkzAutoLabelPoints[center=O](A,B,C)
-					\onslide<2>{
-						\tkzInterLC(B,O)(O,A) \tkzGetPoints{B}{A'}
-						\tkzAutoLabelPoints[center=O](A')
-						\tkzDrawSegment[new](B,A')
-						\tkzDrawSegment[new](A',C)
-						\tkzDrawPoint[new](O)
-						\tkzLabelPoint[new,above](O){O}
-					}
-					\onslide<3->{
-						\tkzInterLC(B,O)(O,A) \tkzGetPoints{B}{A'}
-						\tkzAutoLabelPoints[center=O](A')
-						\tkzDrawSegment[](B,A')
-						\tkzDrawSegment[](A',C)
-						\tkzDrawPoint(O)
-						\tkzLabelPoint[above](O){O}
-					}
-					\onslide<3>{
-						\tkzMarkRightAngle[new](B,C,A')
-					}
-					\onslide<4->{
-						\tkzMarkRightAngle[](B,C,A')
-					}
-				\end{tikzpicture}
-			\end{center}
-		\column{0.6\textwidth}
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{theorem}[The Extended Law of Sine]
-					Given a triangle $ABC$, we have 
-					\begin{equation*}
-						\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2\mathcal{R}
-					\end{equation*}
-				\end{theorem}
-				Proof:
-				\begin{enumerate}
-					\item Without loss of generality, we only prove $\frac{a}{\sin A} = 2\mathcal{R}$
-					\item<2-> Move $A$ to $A'$ such that $A'B$ is the diameter of the circle.
-					\item<3-> Note that $\triangle ACB$ is a right-angled triangle and $\angle BA'C = \angle BAC$.
-					\item<4-> We have $\frac{a}{\sin BAC} = \frac{CB}{\angle BA'C} = A'B = 2\mathcal{R}$
-				\end{enumerate}
-			\end{minipage}
+			\begin{tikzpicture}
+				\tkzDefPoints{0/0/A,3/0/B,2/2/C}
+				\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O} \tkzGetLength{rayon}
+				\tkzDrawCircle[new,dashed,R](O, \rayon pt)
+				\tkzDrawPolygon(A,B,C)
+				\tkzAutoLabelPoints[center=O](A,B,C)
+				\onslide<2>{
+					\tkzInterLC(B,O)(O,A) \tkzGetPoints{B}{A'}
+					\tkzAutoLabelPoints[center=O](A')
+					\tkzDrawSegment[new](B,A')
+					\tkzDrawSegment[new](A',C)
+					\tkzDrawPoint[new](O)
+					\tkzLabelPoint[new,above](O){O}
+				}
+				\onslide<3->{
+					\tkzInterLC(B,O)(O,A) \tkzGetPoints{B}{A'}
+					\tkzAutoLabelPoints[center=O](A')
+					\tkzDrawSegment[](B,A')
+					\tkzDrawSegment[](A',C)
+					\tkzDrawPoint(O)
+					\tkzLabelPoint[above](O){O}
+				}
+				\onslide<3>{
+					\tkzMarkRightAngle[new](B,C,A')
+				}
+				\onslide<4->{
+					\tkzMarkRightAngle[](B,C,A')
+				}
+			\end{tikzpicture}
 		\end{center}
+		\column{0.6\textwidth}
+		\begin{theorem}[The Extended Law of Sine]
+			Given a triangle $ABC$, we have 
+			\begin{equation*}
+				\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2\mathcal{R}
+			\end{equation*}
+		\end{theorem}
+		Proof:
+		\begin{enumerate}
+			\item Without loss of generality, we only prove $\frac{a}{\sin A} = 2\mathcal{R}$
+			\item<2-> Move $A$ to $A'$ such that $A'B$ is the diameter of the circle.
+			\item<3-> Note that $\triangle ACB$ is a right-angled triangle and $\angle BA'C = \angle BAC$.
+			\item<4-> We have $\frac{a}{\sin BAC} = \frac{CB}{\angle BA'C} = A'B = 2\mathcal{R}$
+		\end{enumerate}
 	\end{columns}	
 \end{frame}
 
@@ -349,61 +335,53 @@
 	\begin{columns}
 		\column{0.4\textwidth}
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{tikzpicture}
-					\tkzDefPoints{0/0/A,3/0/C,2/2/B}
-					\tkzDrawPolygon(A,B,C)
-					\tkzDefPointsBy[projection=onto A--C](B){H}
-					\tkzDrawSegment(B,H)
-					\tkzLabelPoint[left](A){A}
-					\tkzLabelPoint[above](B){B}
-					\tkzLabelPoint[right](C){C}
-					\tkzLabelPoint[below](H){H}
-					\tkzLabelLine[pos=0.5,right](B,C){a}
-					\tkzLabelLine[pos=0.5,below](A,C){b}
-				\end{tikzpicture}
-			\end{minipage}
+			\begin{tikzpicture}
+				\tkzDefPoints{0/0/A,3/0/C,2/2/B}
+				\tkzDrawPolygon(A,B,C)
+				\tkzDefPointsBy[projection=onto A--C](B){H}
+				\tkzDrawSegment(B,H)
+				\tkzLabelPoint[left](A){A}
+				\tkzLabelPoint[above](B){B}
+				\tkzLabelPoint[right](C){C}
+				\tkzLabelPoint[below](H){H}
+				\tkzLabelLine[pos=0.5,right](B,C){a}
+				\tkzLabelLine[pos=0.5,below](A,C){b}
+			\end{tikzpicture}
 		\end{center}
 		\column{0.6\textwidth}
-		\begin{minipage}{0.9\textwidth}
-			\begin{exampleblock}{Naming Convention}
-				$[ABC]$	denotes the area of $ABC$.
-			\end{exampleblock}
-			\begin{theorem}[Area of a triangle]
-				$[ABC] = \frac{1}{2}ab\sin C$.
-			\end{theorem}
-			Proof:
-			\begin{enumerate}
-				\item $BH = a\sin C$, $AC=B$
-				\item $[ABC] = \frac{1}{2} BH \cdot AC = \frac{1}{2}ab\sin C$.
-			\end{enumerate}
-			\begin{theorem}[Circumradius and Area]
-				By the extended law of sine, we also have $\sin C = \frac{c}{2\mathcal{R}}$, hence, $[ABC] = \frac{abc}{4\mathcal{R}}$
-			\end{theorem}
-		\end{minipage}
+		\begin{exampleblock}{Naming Convention}
+			$[ABC]$	denotes the area of $ABC$.
+		\end{exampleblock}
+		\begin{theorem}[Area of a triangle]
+			$[ABC] = \frac{1}{2}ab\sin C$.
+		\end{theorem}
+		Proof:
+		\begin{enumerate}
+			\item $BH = a\sin C$, $AC=B$
+			\item $[ABC] = \frac{1}{2} BH \cdot AC = \frac{1}{2}ab\sin C$.
+		\end{enumerate}
+		\begin{theorem}[Circumradius and Area]
+			By the extended law of sine, we also have $\sin C = \frac{c}{2\mathcal{R}}$, hence, $[ABC] = \frac{abc}{4\mathcal{R}}$
+		\end{theorem}
 	\end{columns}
 \end{frame}
 
 \subsection{Relationship between Circumradius and Side Lengths}
 \begin{frame}{Relationship between Circumradius and Side Lengths}
-	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{exampleblock}{Naming Convention}
-				$s$ denotes the semi-perimeter of $\triangle ABC$, i.e. $\frac{a+b+c}{2}$.
-			\end{exampleblock}
-			We state the Heron's formula without proof:
-			\begin{theorem}[Heron's formula]
-				In $\triangle ABC$, we have $[ABC] = \sqrt{s(s-a)(s-b)(s-c)}$.
-			\end{theorem}
-			Together with the result in the previous slide, we can find the circumradius of a triangle if we know all $3$ side lengths:
-			\begin{theorem}[Circumradius and Side Lengths]
-				\begin{align*}
-					[ABC] &= \tfrac{abc}{4\mathcal{R}} \\
-					\mathcal{R} &= \tfrac{abc}{4\sqrt{s(s-a)(s-b)(s-c)} }
-				\end{align*}
-			\end{theorem}
-		\end{minipage}
-	\end{center}
+	\begin{exampleblock}{Naming Convention}
+		$s$ denotes the semi-perimeter of $\triangle ABC$, i.e. $\frac{a+b+c}{2}$.
+	\end{exampleblock}
+	We state the Heron's formula without proof:
+	\begin{theorem}[Heron's formula]
+		In $\triangle ABC$, we have $[ABC] = \sqrt{s(s-a)(s-b)(s-c)}$.
+	\end{theorem}
+	Together with the result in the previous slide, we can find the circumradius of a triangle if we know all $3$ side lengths:
+	\begin{theorem}[Circumradius and Side Lengths]
+		\begin{align*}
+			[ABC] &= \tfrac{abc}{4\mathcal{R}} \\
+			\mathcal{R} &= \tfrac{abc}{4\sqrt{s(s-a)(s-b)(s-c)} }
+		\end{align*}
+	\end{theorem}
 \end{frame}
 
 \section{Cyclic Quadrilateral}
@@ -436,76 +414,64 @@
 		\end{tikzpicture}
 
 		\column{0.6\textwidth}		
-		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\centering
-				\begin{block}{Question 1}
-					Is it always possible to find a circle passing through a triangle?
-				\end{block}
-				\begin{block}{Question 2}
-					Is it always possible to find a circle passing through a quadrilateral?
-				\end{block}
-				\pause
-				\begin{exampleblock}{Answers}
-					Yes, a circumcentre always exists for a triangle;
+		\centering
+		\begin{block}{Question 1}
+			Is it always possible to find a circle passing through a triangle?
+		\end{block}
+		\begin{block}{Question 2}
+			Is it always possible to find a circle passing through a quadrilateral?
+		\end{block}
+		\pause
+		\begin{exampleblock}{Answers}
+			Yes, a circumcentre always exists for a triangle;
 
-					No, not possible if a point does not lie on the circumcentre formed by the other three points.
-				\end{exampleblock}
-			\end{minipage}
-		\end{center}
+			No, not possible if a point does not lie on the circumcentre formed by the other three points.
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
 \begin{frame}{Properties of Cyclic Quadrilateral}
 	\begin{columns}
 		\column{0.4\textwidth}	
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{center}
-					\begin{tikzpicture}[scale=0.35]
-						\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-3.535/-3.535/D}
-						\tkzDrawPolygon(A,B,C,D)
-						\tkzDrawSegments(O,A O,C)
-						\tkzDefCircle[circum](A,B,C)
-						\tkzGetPoint{O}
-						\tkzGetLength{rayon}
-						\tkzDrawCircle[R](O,\rayon pt)
+			\begin{tikzpicture}[scale=0.35]
+				\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-3.535/-3.535/D}
+				\tkzDrawPolygon(A,B,C,D)
+				\tkzDrawSegments(O,A O,C)
+				\tkzDefCircle[circum](A,B,C)
+				\tkzGetPoint{O}
+				\tkzGetLength{rayon}
+				\tkzDrawCircle[R](O,\rayon pt)
 
-						% Label the points
-						 \tkzAutoLabelPoints[center=O](A,B,C,D)
-						 \tkzLabelPoints(O)
+				% Label the points
+				\tkzAutoLabelPoints[center=O](A,B,C,D)
+				\tkzLabelPoints(O)
 
-						 % Mark the angle
-						 \tkzMarkAngle[color=red](A,O,C)
-						 \tkzLabelAngle[pos=1.5,color=red](A,O,C){$2\alpha$}
-						 \tkzMarkAngle[color=red](A,D,C)
-						 \tkzLabelAngle[pos=1.5,color=red](A,D,C){$\alpha$}
-						 \tkzMarkAngle[color=blue](C,O,A)
-						 \tkzLabelAngle[pos=1.5,color=blue](C,O,A){$2\beta$}
-						 \tkzMarkAngle[color=blue](C,B,A)
-						 \tkzLabelAngle[pos=1.5,color=blue](C,B,A){$\beta$}
-					\end{tikzpicture}
-				\end{center}
-			\end{minipage}	
+				% Mark the angle
+				\tkzMarkAngle[color=red](A,O,C)
+				\tkzLabelAngle[pos=1.5,color=red](A,O,C){$2\alpha$}
+				\tkzMarkAngle[color=red](A,D,C)
+				\tkzLabelAngle[pos=1.5,color=red](A,D,C){$\alpha$}
+				\tkzMarkAngle[color=blue](C,O,A)
+				\tkzLabelAngle[pos=1.5,color=blue](C,O,A){$2\beta$}
+				\tkzMarkAngle[color=blue](C,B,A)
+				\tkzLabelAngle[pos=1.5,color=blue](C,B,A){$\beta$}
+			\end{tikzpicture}
 		\end{center}
 		\column{0.6\textwidth}
-		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{enumerate}
-					\item Let $\angle COA = 2\alpha$, $\text{Reflex } \angle COA = 2\beta$
-					\pause
-					\item $2\alpha + 2\beta = 360^o \implies \alpha + \beta = 180^o$
-					\pause
-					\item $\angle CDA + \angle CBA = \alpha + \beta = 180^o$
-					\pause
-				\end{enumerate}
-				\begin{theorem}[Supplementary opposite angles]
-					Opposite angles inside a cyclic quadrilateral adds up to $180^o$.
-				\end{theorem}
-				\begin{Corollary}
-					Exterior angle equals to the opposite interior angle inside a cyclic quadrilateral.
-				\end{Corollary}
-			\end{minipage}
-		\end{center}
+		\begin{enumerate}
+			\item Let $\angle COA = 2\alpha$, $\text{Reflex } \angle COA = 2\beta$
+				\pause
+			\item $2\alpha + 2\beta = 360^o \implies \alpha + \beta = 180^o$
+				\pause
+			\item $\angle CDA + \angle CBA = \alpha + \beta = 180^o$
+				\pause
+		\end{enumerate}
+		\begin{theorem}[Supplementary opposite angles]
+			Opposite angles inside a cyclic quadrilateral adds up to $180^o$.
+		\end{theorem}
+		\begin{Corollary}
+			Exterior angle equals to the opposite interior angle inside a cyclic quadrilateral.
+		\end{Corollary}
 	\end{columns}
 \end{frame}
 \subsection{Properties for Cyclic Quadrilateral}
@@ -513,56 +479,45 @@
 	\begin{columns}
 		\column{0.4\textwidth}	
 		\begin{center}
-			\begin{minipage}{0.95\textwidth}
-					\begin{tikzpicture}[scale=0.35]
-						\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-3.535/-3.535/D}
-						\tkzDrawPolygon(A,B,C,D)
-						\tkzDrawSegments(B,D A,C)
-						\tkzDefCircle[circum](A,B,C)
-						\tkzGetPoint{O}
-						\tkzGetLength{rayon}
-						\tkzDrawCircle[R](O,\rayon pt)
+			\begin{tikzpicture}[scale=0.35]
+				\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-3.535/-3.535/D}
+				\tkzDrawPolygon(A,B,C,D)
+				\tkzDrawSegments(B,D A,C)
+				\tkzDefCircle[circum](A,B,C)
+				\tkzGetPoint{O}
+				\tkzGetLength{rayon}
+				\tkzDrawCircle[R](O,\rayon pt)
 
-						% Label the points
-						 \tkzAutoLabelPoints[center=O](A,B,C,D)
+				% Label the points
+				\tkzAutoLabelPoints[center=O](A,B,C,D)
 
-						 % Mark the angle
-						 \tkzMarkAngle[size=2.3,color=red](A,C,B)
-						 \tkzLabelAngle[pos=2.8,color=red](A,C,B){$\alpha$}
-						 \tkzMarkAngle[size=2.3,color=red](A,D,B)
-						 \tkzLabelAngle[pos=2.8,color=red](A,D,B){$\alpha$}
-					\end{tikzpicture}
-			\end{minipage}	
+				% Mark the angle
+				\tkzMarkAngle[size=2.3,color=red](A,C,B)
+				\tkzLabelAngle[pos=2.8,color=red](A,C,B){$\alpha$}
+				\tkzMarkAngle[size=2.3,color=red](A,D,B)
+				\tkzLabelAngle[pos=2.8,color=red](A,D,B){$\alpha$}
+			\end{tikzpicture}
 		\end{center}
 
 		\column{0.6\textwidth}
-		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{theorem}[Angles subtended by the same arc]
-					Angles subtended by the same arc are equal.
-				\end{theorem}
-			\end{minipage}
-		\end{center}
+		\begin{theorem}[Angles subtended by the same arc]
+			Angles subtended by the same arc are equal.
+		\end{theorem}
 	\end{columns}
 \end{frame}
 
 \subsection{Test for Cyclic Quadrilateral}
 \begin{frame}{Test for Cyclic Quadrilateral}
-	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{theorem}[Test for Cyclic Quadrilateral]
-				It turns out that the mentioned $3$ properties are also tests for cyclic quadrilateral.
-				\begin{itemize}
-					\item Opposite angles adds up to $180^o$.
-					\item Exterior angle equals the opposite interior angle.
-					\item Angles subtended by the same \textbf{side} are equal.
-				\end{itemize}
-				This means that if \textbf{any} of the above $3$ statement is true, then the quadrilateral is a cyclic quadrilateral.
-			\end{theorem}
-			The proof is omitted here. Now you should have enough to solve the original problem. :)
-		\end{minipage}
-		
-	\end{center}
+	\begin{theorem}[Test for Cyclic Quadrilateral]
+		It turns out that the mentioned $3$ properties are also tests for cyclic quadrilateral.
+		\begin{itemize}
+			\item Opposite angles adds up to $180^o$.
+			\item Exterior angle equals the opposite interior angle.
+			\item Angles subtended by the same \textbf{side} are equal.
+		\end{itemize}
+		This means that if \textbf{any} of the above $3$ statement is true, then the quadrilateral is a cyclic quadrilateral.
+	\end{theorem}
+	The proof is omitted here. Now you should have enough to solve the original problem. :)
 \end{frame}
 
 \begin{frame}{Rerouting to our original problem\ldots}
@@ -594,45 +549,43 @@
 \begin{frame}{Power Chord Theorem (I)}
 	\begin{columns}
 		\column{0.5\textwidth}	
-		\begin{minipage}{0.95\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[scale=0.45]
-					\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-3.535/-3.535/D}
-					\tkzDrawPolygon(A,B,C,D)
-					\tkzDrawSegments(B,D A,C)
-					\tkzDefCircle[circum](A,B,C)
-					\tkzGetPoint{O}
-					\tkzGetLength{rayon}
-					\tkzDrawCircle[R](O,\rayon pt)
-					\tkzInterLL(A,C)(B,D)
-					\tkzGetPoint{P}
+		\begin{center}
+			\begin{tikzpicture}[scale=0.45]
+				\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-3.535/-3.535/D}
+				\tkzDrawPolygon(A,B,C,D)
+				\tkzDrawSegments(B,D A,C)
+				\tkzDefCircle[circum](A,B,C)
+				\tkzGetPoint{O}
+				\tkzGetLength{rayon}
+				\tkzDrawCircle[R](O,\rayon pt)
+				\tkzInterLL(A,C)(B,D)
+				\tkzGetPoint{P}
 
-					% Label the points
-					 \tkzAutoLabelPoints[center=O](A,B,C,D)
-					 \tkzLabelPoint[below](P){$P$}
-					 \onslide<2->{
-						 \tkzMarkAngle[size=1,color=red](D,C,A)
-						 \tkzLabelAngle[pos=1.5,color=red](D,C,A){$\alpha$}
-						 \tkzMarkAngle[size=1,color=red](D,B,A)
-						 \tkzLabelAngle[pos=1.5,color=red](D,B,A){$\alpha$}
-						 \tkzMarkAngle[size=1,color=blue](B,D,C)
-						 \tkzLabelAngle[pos=1.5,color=blue](B,D,C){$\beta$}
-						 \tkzMarkAngle[size=1,color=blue](B,A,C)
-						 \tkzLabelAngle[pos=1.5,color=blue](B,A,C){$\beta$}
-					 }
-				\end{tikzpicture}
-			\end{center}
-		\end{minipage}	
+				% Label the points
+				\tkzAutoLabelPoints[center=O](A,B,C,D)
+				\tkzLabelPoint[below](P){$P$}
+				\onslide<2->{
+					\tkzMarkAngle[size=1,color=red](D,C,A)
+					\tkzLabelAngle[pos=1.5,color=red](D,C,A){$\alpha$}
+					\tkzMarkAngle[size=1,color=red](D,B,A)
+					\tkzLabelAngle[pos=1.5,color=red](D,B,A){$\alpha$}
+					\tkzMarkAngle[size=1,color=blue](B,D,C)
+					\tkzLabelAngle[pos=1.5,color=blue](B,D,C){$\beta$}
+					\tkzMarkAngle[size=1,color=blue](B,A,C)
+					\tkzLabelAngle[pos=1.5,color=blue](B,A,C){$\beta$}
+				}
+			\end{tikzpicture}
+		\end{center}
 		\column{0.5\textwidth}
 		\begin{enumerate}
 			\pause
 			\item $\angle DCA = \angle DBA$
 			\item $\angle CDB = \angle DAB$
-			\pause
+				\pause
 			\item $\Delta PCD \sim \Delta PBA$	
-			\pause
+				\pause
 			\item $\frac{PC}{PB} = \frac{PD}{PA}$
-			\pause
+				\pause
 			\item $PC \cdot PA = PB \cdot PD$
 		\end{enumerate}
 	\end{columns}
@@ -640,60 +593,56 @@
 \begin{frame}{Power Chord Theorem (I)}
 	\begin{columns}
 		\column{0.4\textwidth}	
-		\begin{minipage}{0.95\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[scale=0.35]
-					\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-2/-4.582/D,0/5/E}
-					\tkzDrawSegments(B,D A,C)
-					\tkzDefCircle[circum](A,B,C)
-					\tkzGetPoint{O}
-					\tkzGetLength{rayon}
-					\tkzDrawCircle[R](O,\rayon pt)
-					\tkzInterLL(A,C)(B,D)
-					\tkzGetPoint{P}
-					\tkzInterLC(E,P)(O,A)
-					\tkzGetPoints{F}{_}
-					\tkzDrawSegment(E,F)
-					% Label the points
-					\tkzAutoLabelPoints[center=O](A,B,C,D,E,F)
-					\tkzLabelPoint[below](P){$P$}
-					\onslide<2->{
-						\tkzLabelPoint[below](O){$O$}
-						\tkzDrawPoints(O)
-						\tkzInterLC(P,O)(O,A)
-						\tkzGetPoints{H}{G}
-						\tkzAutoLabelPoints[center=O](G,H)
-						\tkzDrawSegments[color=red](G,H)
-					}
-				\end{tikzpicture}
-				\begin{equation*}
-					PC \cdot PA = PE \cdot PF = PB \cdot PD
-				\end{equation*}
-			\end{center}
-		\end{minipage}	
-		\column{0.6\textwidth}
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				In fact, if we have any chord $XY$ passing through $P$, $PX \cdot PY$ is always fixed.
-				\begin{block}{Power of a Point \textbf{inside} the circle}
+			\begin{tikzpicture}[scale=0.35]
+				\tkzDefPoints{0/0/O,5/0/A,4/3/B,-4/3/C,-2/-4.582/D,0/5/E}
+				\tkzDrawSegments(B,D A,C)
+				\tkzDefCircle[circum](A,B,C)
+				\tkzGetPoint{O}
+				\tkzGetLength{rayon}
+				\tkzDrawCircle[R](O,\rayon pt)
+				\tkzInterLL(A,C)(B,D)
+				\tkzGetPoint{P}
+				\tkzInterLC(E,P)(O,A)
+				\tkzGetPoints{F}{_}
+				\tkzDrawSegment(E,F)
+				% Label the points
+				\tkzAutoLabelPoints[center=O](A,B,C,D,E,F)
+				\tkzLabelPoint[below](P){$P$}
+				\onslide<2->{
+					\tkzLabelPoint[below](O){$O$}
+					\tkzDrawPoints(O)
+					\tkzInterLC(P,O)(O,A)
+					\tkzGetPoints{H}{G}
+					\tkzAutoLabelPoints[center=O](G,H)
+					\tkzDrawSegments[color=red](G,H)
+				}
+			\end{tikzpicture}
+			\begin{equation*}
+				PC \cdot PA = PE \cdot PF = PB \cdot PD
+			\end{equation*}
+		\end{center}
+		\column{0.6\textwidth}
+		In fact, if we have any chord $XY$ passing through $P$, $PX \cdot PY$ is always fixed.
+		\begin{center}
+			\begin{block}{Power of a Point \textbf{inside} the circle}
 				$\Pow_\omega(P)$ with respect to the circle $\omega$ is defined to be $|PX \cdot PY|$ for any chord $XY$ passing through $P$.
-				\end{block}
-				\pause
-				\begin{block}{Power = $\mathcal{R}^2-OP^2 > 0$}
-					\begin{enumerate}
-						\item $\mathcal{R}$ is the radius of circumcircle.
+			\end{block}
+			\pause
+			\begin{block}{Power = $\mathcal{R}^2-OP^2 > 0$}
+				\begin{enumerate}
+					\item $\mathcal{R}$ is the radius of circumcircle.
 						\pause
-						\item Draw a diameter $GH$ through $P$
+					\item Draw a diameter $GH$ through $P$
 						\pause
-						\item 
-							$\begin{aligned}[t]
-								\Pow_\omega(P) &= PG \cdot PH \\
-											   &= (\mathcal{R}+OP)  \\
-											   & \cdot (\mathcal{R}-OP) = \mathcal{R}^2-OP^2
-							\end{aligned}$
-					\end{enumerate}	
-				\end{block}
-			\end{minipage}
+					\item 
+						$\begin{aligned}[t]
+							\Pow_\omega(P) &= PG \cdot PH \\
+										   &= (\mathcal{R}+OP)  \\
+										   & \cdot (\mathcal{R}-OP) = \mathcal{R}^2-OP^2
+						\end{aligned}$
+				\end{enumerate}	
+			\end{block}
 		\end{center}
 	\end{columns}
 \end{frame}
@@ -701,37 +650,35 @@
 \begin{frame}{Power Chord Theorem (II)}
 	\begin{columns}
 		\column{0.55\textwidth}	
-		\begin{minipage}{0.95\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[scale=0.4]
-					\tkzDefPoints{0/0/O,5/0/T,4/3/B,-4/3/C,0/-5/E,7/7/P}
-					\tkzDefCircle[circum](T,B,C)
-					\tkzGetPoint{O}
-					\tkzGetLength{rayon}
-					\tkzDrawCircle[R](O,\rayon pt)
-					\tkzDefLine[tangent from = P](O,B) \tkzGetPoints{_}{A}
-					\tkzDrawSegments(P,C)
-					\tkzDrawSegments(P,E)
-					\tkzInterLC(C,P)(O,A)
-					\tkzGetPoints{B}{C}
-					\tkzInterLC(E,P)(O,A)
-					\tkzGetPoints{E}{D}
-					\tkzAutoLabelPoints[center=O](P,B,C,D,E)
-					\tkzDrawSegment[dashed](B,D)
-					\tkzDrawSegment[dashed](C,E)
-					\onslide<2->{
-						 \tkzMarkAngle[size=1,color=red](D,B,P)
-						 \tkzLabelAngle[pos=1.5,color=red](D,B,P){$\alpha$}
-						 \tkzMarkAngle[size=1,color=red](P,E,C)
-						 \tkzLabelAngle[pos=1.5,color=red](P,E,C){$\alpha$}
-						 \tkzMarkAngle[size=1,color=blue](P,D,B)
-						 \tkzLabelAngle[pos=1.5,color=blue](P,D,B){$\beta$}
-						 \tkzMarkAngle[size=1,color=blue](E,C,P)
-						 \tkzLabelAngle[pos=1.5,color=blue](E,C,P){$\beta$}
-					 }
-				\end{tikzpicture}
-			\end{center}
-		\end{minipage}	
+		\begin{center}
+			\begin{tikzpicture}[scale=0.4]
+				\tkzDefPoints{0/0/O,5/0/T,4/3/B,-4/3/C,0/-5/E,7/7/P}
+				\tkzDefCircle[circum](T,B,C)
+				\tkzGetPoint{O}
+				\tkzGetLength{rayon}
+				\tkzDrawCircle[R](O,\rayon pt)
+				\tkzDefLine[tangent from = P](O,B) \tkzGetPoints{_}{A}
+				\tkzDrawSegments(P,C)
+				\tkzDrawSegments(P,E)
+				\tkzInterLC(C,P)(O,A)
+				\tkzGetPoints{B}{C}
+				\tkzInterLC(E,P)(O,A)
+				\tkzGetPoints{E}{D}
+				\tkzAutoLabelPoints[center=O](P,B,C,D,E)
+				\tkzDrawSegment[dashed](B,D)
+				\tkzDrawSegment[dashed](C,E)
+				\onslide<2->{
+					\tkzMarkAngle[size=1,color=red](D,B,P)
+					\tkzLabelAngle[pos=1.5,color=red](D,B,P){$\alpha$}
+					\tkzMarkAngle[size=1,color=red](P,E,C)
+					\tkzLabelAngle[pos=1.5,color=red](P,E,C){$\alpha$}
+					\tkzMarkAngle[size=1,color=blue](P,D,B)
+					\tkzLabelAngle[pos=1.5,color=blue](P,D,B){$\beta$}
+					\tkzMarkAngle[size=1,color=blue](E,C,P)
+					\tkzLabelAngle[pos=1.5,color=blue](E,C,P){$\beta$}
+				}
+			\end{tikzpicture}
+		\end{center}
 		\column{0.45\textwidth}
 		\begin{enumerate}
 			\item $\angle PBD = \angle PEC$
@@ -746,93 +693,7 @@
 \begin{frame}{Power Chord Theorem (II)}
 	\begin{columns}
 		\column{0.4\textwidth}	
-		\begin{minipage}{0.95\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[scale=0.3]
-					\tkzDefPoints{0/0/O,5/0/T,4/3/B,-4/3/C,0/-5/E,7/7/P}
-					\tkzDefCircle[circum](T,B,C)
-					\tkzGetPoint{O}
-					\tkzGetLength{rayon}
-					\tkzDrawCircle[R](O,\rayon pt)
-					\tkzDefLine[tangent from = P](O,B) \tkzGetPoints{_}{A}
-					\tkzDrawSegments(P,A)
-					\tkzDrawSegments(P,C)
-					\tkzDrawSegments(P,E)
-					\tkzInterLC(C,P)(O,A)
-					\tkzGetPoints{B}{C}
-					\tkzInterLC(E,P)(O,A)
-					\tkzGetPoints{E}{D}
-					\tkzAutoLabelPoints[center=O](P,A,B,C,D,E)
-					\onslide<3->{
-						\tkzInterLC(O,P)(O,A) \tkzGetPoints{G}{H}
-						\tkzDrawSegment[color=red](P,G)
-						\tkzDrawPoint(O)
-						\tkzAutoLabelPoints[center=O](H,G)
-						\tkzLabelPoint[below](O){$O$}
-					}
-				\end{tikzpicture}
-				\begin{equation*}
-					PB \cdot PC = PD \cdot PE = PA^2
-				\end{equation*}
-			\end{center}
-		\end{minipage}	
-		\column{0.6\textwidth}
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				Again, if we have any chord $XY$ passing through $P$, $PX \cdot PY$ is always fixed.
-				\begin{block}{Power of a Point \textbf{outside} the circle}
-					$\Pow_\omega(P)$ with respect to the circle $\omega$ is defined to be $-|PX \cdot PY|$ for any chord $XY$ passing through $P$.
-				\end{block}
-				\pause
-				\begin{block}{Power = $\mathcal{R}^2-OP^2 < 0$}
-					\begin{enumerate}
-						\item Let $R$ be the radius of circumcircle.
-							\pause
-						\item Draw a diameter $GH$ through $P$
-							\pause
-						\item 
-							$\begin{aligned}[t]
-								\Pow_\omega(P) &= -|PG \cdot PH| \\
-											   &= (\mathcal{R}+OP)  \\
-											   & \cdot (\mathcal{R}-OP) = \mathcal{R}^2-OP^2
-							\end{aligned}$
-					\end{enumerate}	
-				\end{block}
-			\end{minipage}
-		\end{center}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Power Chord Theorem (III)}
-	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{block}{Power of a Point \textbf{on} the circle}
-				$\Pow_\omega(P)$ with respect to the circle $\omega$ is equal to $0$. (Why does this makes sense?)
-			\end{block}
-			\begin{block}{Power = $\mathcal{R}^2-OP^2=0$}
-				As expected.
-			\end{block}
-		\end{minipage}
-	\end{center}
-\end{frame}
-
-\begin{frame}{Converse of Power Chord Theorem}
-	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			In fact, the converse of power chord theorem is also true.	
-			\begin{theorem}[Converse of the Power Chord Theorem]
-				Let $A,B,X,Y$ be four distinct points in the plane and let lines  $AB$ and  $XY$ intersect at $P$. Suppose that either $P$ lies in both of the segments $\overline{AB}$ and $\overline{XY}$, or in neither segment. If $PA \cdot PB = PX \cdot PY$, then $A, B, X, Y$ are concyclic.
-			\end{theorem}
-			This serves as another test for cyclic quadrilateral. The proof is omitted here.
-		\end{minipage}
-	\end{center}
-\end{frame}
-
-\begin{frame}{Another proof of the Pythagoras Theorem}
-	\begin{columns}
-		\column{0.5\textwidth}
-		\begin{minipage}{0.9\textwidth}
-			\centering
 			\begin{tikzpicture}[scale=0.3]
 				\tkzDefPoints{0/0/O,5/0/T,4/3/B,-4/3/C,0/-5/E,7/7/P}
 				\tkzDefCircle[circum](T,B,C)
@@ -840,26 +701,98 @@
 				\tkzGetLength{rayon}
 				\tkzDrawCircle[R](O,\rayon pt)
 				\tkzDefLine[tangent from = P](O,B) \tkzGetPoints{_}{A}
-				\tkzDrawSegments(P,O O,A)
 				\tkzDrawSegments(P,A)
-				\tkzAutoLabelPoints[center=O](P,A)
-				\tkzDrawPoint(O)
-				\tkzLabelPoint[above](O){O}
+				\tkzDrawSegments(P,C)
+				\tkzDrawSegments(P,E)
+				\tkzInterLC(C,P)(O,A)
+				\tkzGetPoints{B}{C}
+				\tkzInterLC(E,P)(O,A)
+				\tkzGetPoints{E}{D}
+				\tkzAutoLabelPoints[center=O](P,A,B,C,D,E)
+				\onslide<3->{
+					\tkzInterLC(O,P)(O,A) \tkzGetPoints{G}{H}
+					\tkzDrawSegment[color=red](P,G)
+					\tkzDrawPoint(O)
+					\tkzAutoLabelPoints[center=O](H,G)
+					\tkzLabelPoint[below](O){$O$}
+				}
 			\end{tikzpicture}
-		\end{minipage}
+			\begin{equation*}
+				PB \cdot PC = PD \cdot PE = PA^2
+			\end{equation*}
+		\end{center}
+		\column{0.6\textwidth}
+		\begin{center}
+			Again, if we have any chord $XY$ passing through $P$, $PX \cdot PY$ is always fixed.
+			\begin{block}{Power of a Point \textbf{outside} the circle}
+				$\Pow_\omega(P)$ with respect to the circle $\omega$ is defined to be $-|PX \cdot PY|$ for any chord $XY$ passing through $P$.
+			\end{block}
+			\pause
+			\begin{block}{Power = $\mathcal{R}^2-OP^2 < 0$}
+				\begin{enumerate}
+					\item Let $R$ be the radius of circumcircle.
+						\pause
+					\item Draw a diameter $GH$ through $P$
+						\pause
+					\item 
+						$\begin{aligned}[t]
+							\Pow_\omega(P) &= -|PG \cdot PH| \\
+										   &= (\mathcal{R}+OP)  \\
+										   & \cdot (\mathcal{R}-OP) = \mathcal{R}^2-OP^2
+						\end{aligned}$
+				\end{enumerate}	
+			\end{block}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Power Chord Theorem (III)}
+	\begin{center}
+		\begin{block}{Power of a Point \textbf{on} the circle}
+			$\Pow_\omega(P)$ with respect to the circle $\omega$ is equal to $0$. (Why does this makes sense?)
+		\end{block}
+		\begin{block}{Power = $\mathcal{R}^2-OP^2=0$}
+			As expected.
+		\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Converse of Power Chord Theorem}
+	In fact, the converse of power chord theorem is also true.	
+	\begin{theorem}[Converse of the Power Chord Theorem]
+		Let $A,B,X,Y$ be four distinct points in the plane and let lines  $AB$ and  $XY$ intersect at $P$. Suppose that either $P$ lies in both of the segments $\overline{AB}$ and $\overline{XY}$, or in neither segment. If $PA \cdot PB = PX \cdot PY$, then $A, B, X, Y$ are concyclic.
+	\end{theorem}
+	This serves as another test for cyclic quadrilateral. The proof is omitted here.
+\end{frame}
+
+\begin{frame}{Another proof of the Pythagoras Theorem}
+	\begin{columns}
 		\column{0.5\textwidth}
-		\begin{minipage}{0.9\textwidth}
-			\begin{block}{Tangent $\perp$ Radius}
-				Tangent of a circle at $A$ is perpendicular to $OA$. (Why?)
-			\end{block}
-			
-			\begin{block}{Proof of Pythagoras Theorem}
-				Rearranging $\Pow_\omega(P) = PA^2 = OP^2-OA^2$ gives
-				\begin{equation*}
-					PA^2+OA^2=OP^2
-				\end{equation*}
-			\end{block}
-		\end{minipage}
+		\centering
+		\begin{tikzpicture}[scale=0.3]
+			\tkzDefPoints{0/0/O,5/0/T,4/3/B,-4/3/C,0/-5/E,7/7/P}
+			\tkzDefCircle[circum](T,B,C)
+			\tkzGetPoint{O}
+			\tkzGetLength{rayon}
+			\tkzDrawCircle[R](O,\rayon pt)
+			\tkzDefLine[tangent from = P](O,B) \tkzGetPoints{_}{A}
+			\tkzDrawSegments(P,O O,A)
+			\tkzDrawSegments(P,A)
+			\tkzAutoLabelPoints[center=O](P,A)
+			\tkzDrawPoint(O)
+			\tkzLabelPoint[above](O){O}
+		\end{tikzpicture}
+		\column{0.5\textwidth}
+		\begin{block}{Tangent $\perp$ Radius}
+			Tangent of a circle at $A$ is perpendicular to $OA$. (Why?)
+		\end{block}
+
+		\begin{block}{Proof of Pythagoras Theorem}
+			Rearranging $\Pow_\omega(P) = PA^2 = OP^2-OA^2$ gives
+			\begin{equation*}
+				PA^2+OA^2=OP^2
+			\end{equation*}
+		\end{block}
 	\end{columns}
 \end{frame}
 
@@ -869,77 +802,73 @@
 	Recall the proof to Power chord theorem (II)
 	\begin{columns}
 		\column{0.55\textwidth}	
-		\begin{minipage}{0.95\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[scale=0.4]
-					\tkzDefPoints{0/0/O,5/0/T,4/3/B,-4/3/C,0/-5/E,7/7/P}
-					\tkzDefCircle[circum](T,B,C)
-					\tkzGetPoint{O}
-					\tkzGetLength{rayon}
-					\tkzDrawCircle[R](O,\rayon pt)
-					\tkzDefLine[tangent from = P](O,B) \tkzGetPoints{_}{A}
-					\tkzInterLC(C,P)(O,A)
-					\tkzGetPoints{B}{C}
-					\tkzInterLC(E,P)(O,A)
-					\tkzGetPoints{E}{D}
-					\tkzAutoLabelPoints[center=O](C,E)
-					\onslide<-3>{
-						\tkzAutoLabelPoints[center=O](B)
-						\coordinate[label=60:$P$] (P) at ($(D)!-2cm!(E)$);
-						\tkzDrawLine[add=0.3 and 0](D,E)
-						\tkzDrawSegment(B,C)
-						\tkzDrawSegment(B,D)
-						\tkzDrawSegment(C,E)
-						\tkzLabelPoint[right](D){$D,\textcolor{red}{B'}$}
-					}
-					\onslide<-2>{
-						\tkzMarkAngle[size=1,color=blue](P,D,B)
-						\tkzLabelAngle[pos=1.5,color=blue](P,D,B){$\beta$}
-						\tkzMarkAngle[size=1,color=blue](E,C,B)
-						\tkzLabelAngle[pos=1.5,color=blue](E,C,B){$\beta$}
-					}
-					\onslide<2->{
-						\tkzDefTangent[at=D](O)
-						\tkzGetPoint{h}
-						\tkzDrawLine[add=4 and 4,color=red](D,h)
-						\tkzDrawSegment[color=red](C,D)
-						\coordinate (B'') at ($(D)!5cm!(h)$);
-						\tkzLabelPoint[above](B''){$\textcolor{red}{B''}$}
-						\coordinate (B''') at ($(h)!5cm!(D)$);
-						\tkzLabelPoint[below](B'''){$\textcolor{red}{B'''}$}
-					}
-					\onslide<3->{
-						\tkzDrawSegments[color=red](D,E C,E)
-						\tkzMarkAngle[size=1,color=red](E,C,D)
-						\tkzLabelAngle[pos=1.5,color=red](E,C,D){$\beta'$}
-					}
-					\onslide<3>{
-						\tkzLabelAngle[pos=1.5,color=red](P,D,B''){$\beta'$}
-						\tkzMarkAngle[size=1,color=red](P,D,B'')
-					}
-					\onslide<4->{
-						\tkzMarkAngle[size=1,color=red](E,D,B''')
-						\tkzLabelAngle[pos=1.5,color=red](E,D,B'''){$\beta'$}
-						\tkzLabelPoint[right](D){$\textcolor{red}{B'}$}
-					}
-				\end{tikzpicture}
-			\end{center}
-		\end{minipage}	
+		\begin{center}
+			\begin{tikzpicture}[scale=0.4]
+				\tkzDefPoints{0/0/O,5/0/T,4/3/B,-4/3/C,0/-5/E,7/7/P}
+				\tkzDefCircle[circum](T,B,C)
+				\tkzGetPoint{O}
+				\tkzGetLength{rayon}
+				\tkzDrawCircle[R](O,\rayon pt)
+				\tkzDefLine[tangent from = P](O,B) \tkzGetPoints{_}{A}
+				\tkzInterLC(C,P)(O,A)
+				\tkzGetPoints{B}{C}
+				\tkzInterLC(E,P)(O,A)
+				\tkzGetPoints{E}{D}
+				\tkzAutoLabelPoints[center=O](C,E)
+				\onslide<-3>{
+					\tkzAutoLabelPoints[center=O](B)
+					\coordinate[label=60:$P$] (P) at ($(D)!-2cm!(E)$);
+					\tkzDrawLine[add=0.3 and 0](D,E)
+					\tkzDrawSegment(B,C)
+					\tkzDrawSegment(B,D)
+					\tkzDrawSegment(C,E)
+					\tkzLabelPoint[right](D){$D,\textcolor{red}{B'}$}
+				}
+				\onslide<-2>{
+					\tkzMarkAngle[size=1,color=blue](P,D,B)
+					\tkzLabelAngle[pos=1.5,color=blue](P,D,B){$\beta$}
+					\tkzMarkAngle[size=1,color=blue](E,C,B)
+					\tkzLabelAngle[pos=1.5,color=blue](E,C,B){$\beta$}
+				}
+				\onslide<2->{
+					\tkzDefTangent[at=D](O)
+					\tkzGetPoint{h}
+					\tkzDrawLine[add=4 and 4,color=red](D,h)
+					\tkzDrawSegment[color=red](C,D)
+					\coordinate (B'') at ($(D)!5cm!(h)$);
+					\tkzLabelPoint[above](B''){$\textcolor{red}{B''}$}
+					\coordinate (B''') at ($(h)!5cm!(D)$);
+					\tkzLabelPoint[below](B'''){$\textcolor{red}{B'''}$}
+				}
+				\onslide<3->{
+					\tkzDrawSegments[color=red](D,E C,E)
+					\tkzMarkAngle[size=1,color=red](E,C,D)
+					\tkzLabelAngle[pos=1.5,color=red](E,C,D){$\beta'$}
+				}
+				\onslide<3>{
+					\tkzLabelAngle[pos=1.5,color=red](P,D,B''){$\beta'$}
+					\tkzMarkAngle[size=1,color=red](P,D,B'')
+				}
+				\onslide<4->{
+					\tkzMarkAngle[size=1,color=red](E,D,B''')
+					\tkzLabelAngle[pos=1.5,color=red](E,D,B'''){$\beta'$}
+					\tkzLabelPoint[right](D){$\textcolor{red}{B'}$}
+				}
+			\end{tikzpicture}
+		\end{center}
 		\column{0.45\textwidth}
-		\begin{minipage}{0.9\textwidth}
-			\begin{block}{Angle in alternate segment}
-				\begin{enumerate}
-					\item Imagine if $B$ gets increasingly close to $D$ as $B'$.
+		\begin{block}{Angle in alternate segment}
+			\begin{enumerate}
+				\item Imagine if $B$ gets increasingly close to $D$ as $B'$.
 					\pause
-					\item $DB'$ is arbitrarily close to the tangent to the circle at $D$.
-					\item Let $B''B'''$ denotes the tangent.
+				\item $DB'$ is arbitrarily close to the tangent to the circle at $D$.
+				\item Let $B''B'''$ denotes the tangent.
 					\pause
-					\item $\angle B''DP = \angle DCE$
+				\item $\angle B''DP = \angle DCE$
 					\pause
-					\item $\angle B'''DE = \angle DCE$
-				\end{enumerate}
-			\end{block}
-		\end{minipage}
+				\item $\angle B'''DE = \angle DCE$
+			\end{enumerate}
+		\end{block}
 	\end{columns}
 \end{frame}
 
@@ -947,44 +876,40 @@
 \begin{frame}{Other Properties of Tangents}
 	\begin{columns}
 		\column{0.5\textwidth}
-		\begin{minipage}{0.9\textwidth}
-			\centering
-			\begin{tikzpicture}[scale=0.3]
-				\tkzDefPoints{0/0/O, 5/0/A, 6/6/P}
-				\tkzDrawCircle(O,A)
-				\tkzDefTangent[from=P](O,A) \tkzGetPoints{A}{B}
-				\tkzDrawSegments[add=0 and .2](P,A P,B)
-				\tkzDrawSegments(O,A O,B)
-				\tkzDrawPoints(O,A,P,B)
-				\tkzAutoLabelPoints[center=O](P,A,B)
-				\tkzLabelPoints(O)
-				\onslide<3->{
-					\tkzDefCircle[circum](O,A,B)
-					\tkzGetPoint{O'}
-					\tkzGetLength{rayon}
-					\tkzDrawCircle[dashed,R,color=red](O',\rayon pt)
-				}
-			\end{tikzpicture}
-			\onslide<2->{
-				\begin{equation*}
-					\begin{split}
-						PA = PB &= OP^2 - \mathcal{R}^2 \\
-								&= \Pow_\omega(P)
-					\end{split}
-				\end{equation*}
+		\centering
+		\begin{tikzpicture}[scale=0.3]
+			\tkzDefPoints{0/0/O, 5/0/A, 6/6/P}
+			\tkzDrawCircle(O,A)
+			\tkzDefTangent[from=P](O,A) \tkzGetPoints{A}{B}
+			\tkzDrawSegments[add=0 and .2](P,A P,B)
+			\tkzDrawSegments(O,A O,B)
+			\tkzDrawPoints(O,A,P,B)
+			\tkzAutoLabelPoints[center=O](P,A,B)
+			\tkzLabelPoints(O)
+			\onslide<3->{
+				\tkzDefCircle[circum](O,A,B)
+				\tkzGetPoint{O'}
+				\tkzGetLength{rayon}
+				\tkzDrawCircle[dashed,R,color=red](O',\rayon pt)
 			}
-		\end{minipage}
+		\end{tikzpicture}
+		\onslide<2->{
+			\begin{equation*}
+				\begin{split}
+					PA = PB &= OP^2 - \mathcal{R}^2 \\
+							&= \Pow_\omega(P)
+				\end{split}
+			\end{equation*}
+		}
 		\column{0.5\textwidth}
 		\pause
-		\begin{minipage}{0.9\textwidth}
-			\begin{block}{Equal Tangents}
-				Given a point $P$ outside $\omega$  circle, there are two tangents of equal length from $P$ to $\omega$.
-			\end{block}
-			\pause
-			\begin{block}{$OABP$ forms a cyclic quadrilateral}
-				$OABP$ is a cyclic quadrilateral since $\angle OBP + \angle OAP = 180^o$. Hence we have $\angle BOA + \angle BPA = 180^o$.
-			\end{block}
-		\end{minipage}
+		\begin{block}{Equal Tangents}
+			Given a point $P$ outside $\omega$  circle, there are two tangents of equal length from $P$ to $\omega$.
+		\end{block}
+		\pause
+		\begin{block}{$OABP$ forms a cyclic quadrilateral}
+			$OABP$ is a cyclic quadrilateral since $\angle OBP + \angle OAP = 180^o$. Hence we have $\angle BOA + \angle BPA = 180^o$.
+		\end{block}
 	\end{columns}
 \end{frame}
 
@@ -992,29 +917,25 @@
 
 \subsection{Prelim 2020 Q6}
 \begin{frame}{Example Problem 1}
+	\begin{block}{Question 1}
+		(Prelim 2020 Q6) In $\Delta ABC, AB = 6, BC = 7, CA = 8$. Let $D$ be the mid-point of minor arc $AB$ on the circumcentre of $\Delta ABC$. Find $AD^2$.
+	\end{block}
+	\pause
+	Sad news: in math contest, the geometric diagram is usually not provided since \sout{problem setters are lazy} the construction of the diagram is a part of the problem.
+	\pause
 	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{block}{Question 1}
-				(Prelim 2020 Q6) In $\Delta ABC, AB = 6, BC = 7, CA = 8$. Let $D$ be the mid-point of minor arc $AB$ on the circumcentre of $\Delta ABC$. Find $AD^2$.
-			\end{block}
-			\pause
-			Sad news: in math contest, the geometric diagram is usually not provided since \sout{problem setters are lazy} the construction of the diagram is a part of the problem.
-			\pause
-			\begin{center}
-				\begin{tikzpicture}[scale=1.3,rotate=20]
-					\tkzDefPoint(0,0){O}
-					\tkzDefPoint(220:1){A}
-					\tkzDefPoint(140:1){B}
-					\tkzDefPoint(20:1){C}
-					\tkzDefPoint(180:1){D}
-					\tkzAutoLabelPoints[center=O,node label](A,B,C,D)
-					\tkzDrawPoints(A,B,C,D)
-					\tkzDrawPolygon(A,B,C)
-					\tkzDrawCircle(O,A)
-					\tkzDefPointBy[projection=onto A--B](D) \tkzGetPoint{H}
-				\end{tikzpicture}
-			\end{center}
-		\end{minipage}
+		\begin{tikzpicture}[scale=1.3,rotate=20]
+			\tkzDefPoint(0,0){O}
+			\tkzDefPoint(220:1){A}
+			\tkzDefPoint(140:1){B}
+			\tkzDefPoint(20:1){C}
+			\tkzDefPoint(180:1){D}
+			\tkzAutoLabelPoints[center=O,node label](A,B,C,D)
+			\tkzDrawPoints(A,B,C,D)
+			\tkzDrawPolygon(A,B,C)
+			\tkzDrawCircle(O,A)
+			\tkzDefPointBy[projection=onto A--B](D) \tkzGetPoint{H}
+		\end{tikzpicture}
 	\end{center}
 \end{frame}
 
@@ -1055,22 +976,20 @@
 		\end{center}
 		\column{0.65\textwidth}
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{itemize}
-					\item $AB = 6$, $BC = 7$, $CA=8$
-					\item $D$ is the mid-point of $\overset{\frown}{AB}$
-					\item Find $AD^2$
-				\end{itemize}
-				\pause
-				\begin{block}{Solution}
-					\begin{enumerate}
-						\item<2-> Drop a perpendicular line from $D$ to $BA$, that the line passes through $O$.
-						\item<3-> $\Pow_\omega(H)= BH \cdot HA = 9$
-						\item<4-> Another way to compute $\Pow_\omega$ is $DH \cdot HE$.
-						\item<5-> $\mathcal{R}=OD=OE$ is the circumradius of the circle and its given by $\frac{abc}{4\sqrt{s(s-a)(s-b)(s-c)} }$, where $s$ is the semi perimeter.
-					\end{enumerate}
-				\end{block}
-			\end{minipage}
+			\begin{itemize}
+				\item $AB = 6$, $BC = 7$, $CA=8$
+				\item $D$ is the mid-point of $\overset{\frown}{AB}$
+				\item Find $AD^2$
+			\end{itemize}
+			\pause
+			\begin{block}{Solution}
+				\begin{enumerate}
+					\item<2-> Drop a perpendicular line from $D$ to $BA$, that the line passes through $O$.
+					\item<3-> $\Pow_\omega(H)= BH \cdot HA = 9$
+					\item<4-> Another way to compute $\Pow_\omega$ is $DH \cdot HE$.
+					\item<5-> $\mathcal{R}=OD=OE$ is the circumradius of the circle and its given by $\frac{abc}{4\sqrt{s(s-a)(s-b)(s-c)} }$, where $s$ is the semi perimeter.
+				\end{enumerate}
+			\end{block}
 		\end{center}
 	\end{columns}
 \end{frame}
@@ -1090,37 +1009,35 @@
 				\tkzDrawPolygon(A,B,C)
 				\tkzDrawCircle(O,A)
 				\tkzDefPointBy[projection=onto A--B](D) \tkzGetPoint{H}
-					\tkzInterLC(D,H)(O,A) \tkzGetPoints{D}{E}
-					\tkzDrawPoints[](H,O,E)
-					\tkzDrawSegment[](D,E)
-					\tkzLabelPoint[node label,above](H){H}
-					\tkzLabelPoint[above](O){O}
-					\tkzAutoLabelPoints[center=O](E)
+				\tkzInterLC(D,H)(O,A) \tkzGetPoints{D}{E}
+				\tkzDrawPoints[](H,O,E)
+				\tkzDrawSegment[](D,E)
+				\tkzLabelPoint[node label,above](H){H}
+				\tkzLabelPoint[above](O){O}
+				\tkzAutoLabelPoints[center=O](E)
 			\end{tikzpicture}
 		\end{center}
 		\column{0.65\textwidth}
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{block}{Solution}
-					\begin{enumerate}
-						\setItemnumber{5}
-						\item $\mathcal{R} = \frac{6 \cdot 7 \cdot 8}{4\sqrt{\frac{21}{2} \cdot \frac{9}{2} \cdot \frac{7}{2} \cdot \frac{5}{2}} } = \frac{16}{\sqrt{15}}$
-						\item 
-							$\begin{aligned}[t]
-								Pow_\omega (H) &= (OE + OH) \cdot (OD - OH) \\
-											   &= (\tfrac{16}{\sqrt{15}})^2 - OH^2 \\
-											   &= 9
-							\end{aligned}$
-							$OH = \frac{11}{\sqrt{15}}$
-						\item 
-							$\begin{aligned}[t]
-								AD^2 &= DH^2 + AH^2 \\
-									 &= (\tfrac{5}{\sqrt{15}})^2 + 3^2 \\
-									 &= \tfrac{32}{3}
-							\end{aligned}$
-					\end{enumerate}
-				\end{block}
-			\end{minipage}
+			\begin{block}{Solution}
+				\begin{enumerate}
+					\setItemnumber{5}
+					\item $\mathcal{R} = \frac{6 \cdot 7 \cdot 8}{4\sqrt{\frac{21}{2} \cdot \frac{9}{2} \cdot \frac{7}{2} \cdot \frac{5}{2}} } = \frac{16}{\sqrt{15}}$
+					\item 
+						$\begin{aligned}[t]
+							Pow_\omega (H) &= (OE + OH) \cdot (OD - OH) \\
+										   &= (\tfrac{16}{\sqrt{15}})^2 - OH^2 \\
+										   &= 9
+						\end{aligned}$
+						$OH = \frac{11}{\sqrt{15}}$
+					\item 
+						$\begin{aligned}[t]
+							AD^2 &= DH^2 + AH^2 \\
+								 &= (\tfrac{5}{\sqrt{15}})^2 + 3^2 \\
+								 &= \tfrac{32}{3}
+						\end{aligned}$
+				\end{enumerate}
+			\end{block}
 		\end{center}
 	\end{columns}
 \end{frame}
@@ -1128,180 +1045,173 @@
 \subsection{Prelim 2022 Q16}
 \begin{frame}{Example Problem 2}
 	\begin{center}
-		\begin{minipage}{0.9\textwidth}
-			\begin{block}{Question 2}
-				(Prelim 2022 Q16) $ABCD$ is a parallelogram with $\angle B$ acute. A circle is tangent to $BC$, $CD$ and $DA$. The circle intersects $AC$ at $M$ and $N$, where $M$ is closer to $A$ than $N$. If $AM = 9$, $MN = 16$ and $NC = 2$, find the area of $ABCD$.
-			\end{block}
-			\pause
-			\begin{center}
-				\begin{tikzpicture}[scale=1]
-					\tkzDefPoint(0,0){O}
-					\tkzDefPoint(-30:1){R}
-					\tkzDefPoint(150:1){S}
-					\tkzDefPoint(-90:1){T}
-					\tkzDrawCircle(O,R)
-					\tkzDefLine[orthogonal=through R](O,R) \tkzGetPoint{X}
-					\tkzDefLine[orthogonal=through T](O,T) \tkzGetPoint{Y}
-					\tkzDefLine[orthogonal=through S](O,S) \tkzGetPoint{Z}
-					\tkzInterLL(S,Z)(T,Y) \tkzGetPoint{D}
-					\tkzInterLL(T,Y)(R,X) \tkzGetPoint{C}
-					\tkzDrawSegment(C,D)
-					\draw (D) -- ($(D)!3cm!(S)$) coordinate(A);
-					\draw (C) -- ($(C)!3cm!(R)$) coordinate(B);
-					\tkzDrawSegment(B,A)
-					\tkzDrawSegment(A,C)
-					\tkzInterLC(A,C)(O,R) \tkzGetPoints{N}{M}
-					\tkzLabelPoint[above](N){N}
-					\tkzLabelPoint[](M){M}
-					\tkzAutoLabelPoints[center=O](A,B,C,D)	
-				\end{tikzpicture}
-			\end{center}
-		\end{minipage}
+		\begin{block}{Question 2}
+			(Prelim 2022 Q16) $ABCD$ is a parallelogram with $\angle B$ acute. A circle is tangent to $BC$, $CD$ and $DA$. The circle intersects $AC$ at $M$ and $N$, where $M$ is closer to $A$ than $N$. If $AM = 9$, $MN = 16$ and $NC = 2$, find the area of $ABCD$.
+		\end{block}
+		\pause
+		\begin{center}
+			\begin{tikzpicture}[scale=1]
+				\tkzDefPoint(0,0){O}
+				\tkzDefPoint(-30:1){R}
+				\tkzDefPoint(150:1){S}
+				\tkzDefPoint(-90:1){T}
+				\tkzDrawCircle(O,R)
+				\tkzDefLine[orthogonal=through R](O,R) \tkzGetPoint{X}
+				\tkzDefLine[orthogonal=through T](O,T) \tkzGetPoint{Y}
+				\tkzDefLine[orthogonal=through S](O,S) \tkzGetPoint{Z}
+				\tkzInterLL(S,Z)(T,Y) \tkzGetPoint{D}
+				\tkzInterLL(T,Y)(R,X) \tkzGetPoint{C}
+				\tkzDrawSegment(C,D)
+				\draw (D) -- ($(D)!3cm!(S)$) coordinate(A);
+				\draw (C) -- ($(C)!3cm!(R)$) coordinate(B);
+				\tkzDrawSegment(B,A)
+				\tkzDrawSegment(A,C)
+				\tkzInterLC(A,C)(O,R) \tkzGetPoints{N}{M}
+				\tkzLabelPoint[above](N){N}
+				\tkzLabelPoint[](M){M}
+				\tkzAutoLabelPoints[center=O](A,B,C,D)	
+			\end{tikzpicture}
+		\end{center}
 	\end{center}
 \end{frame}
 
 \begin{frame}{Example Problem 2 (Solution)}
 	\begin{columns}
 		\column{0.4\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[scale=0.9]
-					\tkzDefPoint(0,0){O}
-					\tkzDefPoint(-30:1){R}
-					\tkzDefPoint(150:1){S}
-					\tkzDefPoint(-90:1){T}
-					\tkzDrawCircle(O,R)
-					\tkzDefLine[orthogonal=through R](O,R) \tkzGetPoint{X}
-					\tkzDefLine[orthogonal=through T](O,T) \tkzGetPoint{Y}
-					\tkzDefLine[orthogonal=through S](O,S) \tkzGetPoint{Z}
-					\tkzInterLL(S,Z)(T,Y) \tkzGetPoint{D}
-					\tkzInterLL(T,Y)(R,X) \tkzGetPoint{C}
-					\tkzDrawSegment(C,D)
-					\draw (D) -- ($(D)!3cm!(S)$) coordinate(A);
-					\draw (C) -- ($(C)!3cm!(R)$) coordinate(B);
-					\tkzDrawSegment(B,A)
-					\tkzDrawSegment(A,C)
-					\tkzInterLC(A,C)(O,R) \tkzGetPoints{N}{M}
-					\tkzLabelPoint[anchor=255,small label](N){N}
-					\tkzLabelPoint[small label](M){M}
-					\tkzAutoLabelPoints[center=O,small label](A,B,C,D)	
-					\tkzLabelPoint[below,small label](T){T}
-					\tkzLabelPoint[left,small label](S){S}
-					\tkzLabelPoint[right,small label](R){R}
-					\onslide<4>{
-						\begin{scope}[new]
-							\tkzDefPointBy[projection=onto A--D](C) \tkzGetPoint{H}
-							\tkzLabelPoint[small label,left,new](H){H}
-							\tkzFillPolygon[color=teal!20,opacity=0.3](H,S,R,C)
-						\end{scope}
-					}
-					\onslide<5->{
+		\begin{center}
+			\begin{tikzpicture}[scale=0.9]
+				\tkzDefPoint(0,0){O}
+				\tkzDefPoint(-30:1){R}
+				\tkzDefPoint(150:1){S}
+				\tkzDefPoint(-90:1){T}
+				\tkzDrawCircle(O,R)
+				\tkzDefLine[orthogonal=through R](O,R) \tkzGetPoint{X}
+				\tkzDefLine[orthogonal=through T](O,T) \tkzGetPoint{Y}
+				\tkzDefLine[orthogonal=through S](O,S) \tkzGetPoint{Z}
+				\tkzInterLL(S,Z)(T,Y) \tkzGetPoint{D}
+				\tkzInterLL(T,Y)(R,X) \tkzGetPoint{C}
+				\tkzDrawSegment(C,D)
+				\draw (D) -- ($(D)!3cm!(S)$) coordinate(A);
+				\draw (C) -- ($(C)!3cm!(R)$) coordinate(B);
+				\tkzDrawSegment(B,A)
+				\tkzDrawSegment(A,C)
+				\tkzInterLC(A,C)(O,R) \tkzGetPoints{N}{M}
+				\tkzLabelPoint[anchor=255,small label](N){N}
+				\tkzLabelPoint[small label](M){M}
+				\tkzAutoLabelPoints[center=O,small label](A,B,C,D)	
+				\tkzLabelPoint[below,small label](T){T}
+				\tkzLabelPoint[left,small label](S){S}
+				\tkzLabelPoint[right,small label](R){R}
+				\onslide<4>{
+					\begin{scope}[new]
 						\tkzDefPointBy[projection=onto A--D](C) \tkzGetPoint{H}
-						\tkzLabelPoint[small label,left](H){H}
+						\tkzLabelPoint[small label,left,new](H){H}
 						\tkzFillPolygon[color=teal!20,opacity=0.3](H,S,R,C)
-					}
-				\end{tikzpicture}
-			\end{center}
+					\end{scope}
+				}
+				\onslide<5->{
+					\tkzDefPointBy[projection=onto A--D](C) \tkzGetPoint{H}
+					\tkzLabelPoint[small label,left](H){H}
+					\tkzFillPolygon[color=teal!20,opacity=0.3](H,S,R,C)
+				}
+			\end{tikzpicture}
+		\end{center}
 		\column{0.6\textwidth}
-		\begin{minipage}{0.9\textwidth}
-			\begin{itemize}
-				\item $AM=9,MN=16,NC=12$
-				\item Circle $\omega$ tangent to $BC$, $CD$, $DA$ at $R,S,T$
-			\end{itemize}
-			\pause
-			\begin{block}{Solution}
-				\begin{enumerate}
-					\item $\Pow_\omega(A) = -AM \cdot AN = -AS^2 \Rightarrow AS = 15$
+		\begin{itemize}
+			\item $AM=9,MN=16,NC=12$
+			\item Circle $\omega$ tangent to $BC$, $CD$, $DA$ at $R,S,T$
+		\end{itemize}
+		\pause
+		\begin{block}{Solution}
+			\begin{enumerate}
+				\item $\Pow_\omega(A) = -AM \cdot AN = -AS^2 \Rightarrow AS = 15$
 					\pause
-					\item $\Pow_\omega(C) = -CN \cdot CM = -CT^2 \Rightarrow CT = CR = 6$
+				\item $\Pow_\omega(C) = -CN \cdot CM = -CT^2 \Rightarrow CT = CR = 6$
 					\pause
-					\item Drop a perpendicular line from $C$ to $AD$ at $H$, note that $SRCH$ forms a rectangle. Hence $SH=CR=6$
+				\item Drop a perpendicular line from $C$ to $AD$ at $H$, note that $SRCH$ forms a rectangle. Hence $SH=CR=6$
 					\pause
-					\item Let $SD=DT=x$, in  $\triangle DHC$, by Pythagoras Theorem, $(x-6)^2+(x+6)^2=AC^2-AH^2$
-				\end{enumerate}
-			\end{block}
-		\end{minipage}
+				\item Let $SD=DT=x$, in  $\triangle DHC$, by Pythagoras Theorem, $(x-6)^2+(x+6)^2=AC^2-AH^2$
+			\end{enumerate}
+		\end{block}
 	\end{columns}	
 \end{frame}
 
 \begin{frame}{Example Problem 2 (Solution Cont.)}
 	\begin{columns}
 		\column{0.4\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[scale=0.9]
-					\tkzDefPoint(0,0){O}
-					\tkzDefPoint(-30:1){R}
-					\tkzDefPoint(150:1){S}
-					\tkzDefPoint(-90:1){T}
-					\tkzDrawCircle(O,R)
-					\tkzDefLine[orthogonal=through R](O,R) \tkzGetPoint{X}
-					\tkzDefLine[orthogonal=through T](O,T) \tkzGetPoint{Y}
-					\tkzDefLine[orthogonal=through S](O,S) \tkzGetPoint{Z}
-					\tkzInterLL(S,Z)(T,Y) \tkzGetPoint{D}
-					\tkzInterLL(T,Y)(R,X) \tkzGetPoint{C}
-					\tkzDrawSegment(C,D)
-					\draw (D) -- ($(D)!3cm!(S)$) coordinate(A);
-					\draw (C) -- ($(C)!3cm!(R)$) coordinate(B);
-					\tkzDrawSegment(B,A)
-					\tkzDrawSegment(A,C)
-					\tkzInterLC(A,C)(O,R) \tkzGetPoints{N}{M}
-					\tkzLabelPoint[anchor=255,small label](N){N}
-					\tkzLabelPoint[small label](M){M}
-					\tkzAutoLabelPoints[center=O,small label](A,B,C,D)	
-					\tkzLabelPoint[below,small label](T){T}
-					\tkzLabelPoint[left,small label](S){S}
-					\tkzLabelPoint[right,small label](R){R}
-					\tkzDefPointBy[projection=onto A--D](C) \tkzGetPoint{H}
-					\tkzLabelPoint[small label,left](H){H}
-					\tkzFillPolygon[color=teal!20,opacity=0.3](H,S,R,C)
-				\end{tikzpicture}
-			\end{center}
+		\begin{center}
+			\begin{tikzpicture}[scale=0.9]
+				\tkzDefPoint(0,0){O}
+				\tkzDefPoint(-30:1){R}
+				\tkzDefPoint(150:1){S}
+				\tkzDefPoint(-90:1){T}
+				\tkzDrawCircle(O,R)
+				\tkzDefLine[orthogonal=through R](O,R) \tkzGetPoint{X}
+				\tkzDefLine[orthogonal=through T](O,T) \tkzGetPoint{Y}
+				\tkzDefLine[orthogonal=through S](O,S) \tkzGetPoint{Z}
+				\tkzInterLL(S,Z)(T,Y) \tkzGetPoint{D}
+				\tkzInterLL(T,Y)(R,X) \tkzGetPoint{C}
+				\tkzDrawSegment(C,D)
+				\draw (D) -- ($(D)!3cm!(S)$) coordinate(A);
+				\draw (C) -- ($(C)!3cm!(R)$) coordinate(B);
+				\tkzDrawSegment(B,A)
+				\tkzDrawSegment(A,C)
+				\tkzInterLC(A,C)(O,R) \tkzGetPoints{N}{M}
+				\tkzLabelPoint[anchor=255,small label](N){N}
+				\tkzLabelPoint[small label](M){M}
+				\tkzAutoLabelPoints[center=O,small label](A,B,C,D)	
+				\tkzLabelPoint[below,small label](T){T}
+				\tkzLabelPoint[left,small label](S){S}
+				\tkzLabelPoint[right,small label](R){R}
+				\tkzDefPointBy[projection=onto A--D](C) \tkzGetPoint{H}
+				\tkzLabelPoint[small label,left](H){H}
+				\tkzFillPolygon[color=teal!20,opacity=0.3](H,S,R,C)
+			\end{tikzpicture}
+		\end{center}
 		\column{0.6\textwidth}
 		\begin{center}
-			\begin{minipage}{0.9\textwidth}
-				\begin{itemize}
+			\begin{itemize}
 				\item $AM=9,MN=16,NC=12,AS=15,CT=CR=SH=6$
-				\end{itemize}
-				\begin{block}{Solution}
-					\begin{enumerate}
-						\setItemnumber{5}
-						\item Solving $(x-6)^2-(x+6)^2=AC^2-AH^2=27^2-21^2=288$ gives $x=12$. 
+			\end{itemize}
+			\begin{block}{Solution}
+				\begin{enumerate}
+					\setItemnumber{5}
+					\item Solving $(x-6)^2-(x+6)^2=AC^2-AH^2=27^2-21^2=288$ gives $x=12$. 
 						\pause
-						\item $[ABCD] = AD \cdot CH = (12+15)\sqrt{288} = 324\sqrt{2} $
-					\end{enumerate}
-				\end{block}
-				\pause
-				\begin{block}{Question}
-					Where did we use the parallelogram condition?	
-				\end{block}
-			\end{minipage}
+					\item $[ABCD] = AD \cdot CH = (12+15)\sqrt{288} = 324\sqrt{2} $
+				\end{enumerate}
+			\end{block}
+			\pause
+			\begin{block}{Question}
+				Where did we use the parallelogram condition?	
+			\end{block}
 		\end{center}
 	\end{columns}	
 \end{frame}
 
 \section{Practice Problems}
 \begin{frame}{Practice Problems}
-	\begin{block}{Question 1}
-		(Prelim 2023 Q17) $ABCD$ is a square. $P$ is a point inside $ABCD$ such that $\angle APD + \angle BPC = 180^o$ and  $\angle BPC$ is acute.  If $PB = 3$ and $PC = 4$, find $BC$.
+	\begin{block}{Prelim 2023 Q17}
+		$ABCD$ is a square. $P$ is a point inside $ABCD$ such that $\angle APD + \angle BPC = 180^o$ and  $\angle BPC$ is acute.  If $PB = 3$ and $PC = 4$, find $BC$.
 	\end{block}
-	\begin{block}{Question 2}
-		(Prelim 2021 Q12) $OABC$ is a trapezium with $OC \parallel AB$ and $\angle AOB = 37^o$	. Furthermore, $A,B,C$ all lie on the circumference of a circle centered at $O$. The perpendicular bisector of $OC$ meets $AC$ at $D$.
+	\begin{block}{Prelim 2021 Q12}
+		$OABC$ is a trapezium with $OC \parallel AB$ and $\angle AOB = 37^o$	. Furthermore, $A,B,C$ all lie on the circumference of a circle centered at $O$. The perpendicular bisector of $OC$ meets $AC$ at $D$.
 	\end{block}
-	\begin{block}{Question 3}
-		(Prelim 2018 Q13) Let $O$ be the circumcentre of $\triangle ABC$. Suppose $AB = 1$ and $AO = AC = 2$. $D$ and $E$ are points on the extensions of $AB$ and $A C$ respectively such that $OD = OE $ and $BD = \sqrt{2} EC$. Find the value of $OD^2$.
+	\begin{block}{Prelim 2018 Q13}
+		Let $O$ be the circumcentre of $\triangle ABC$. Suppose $AB = 1$ and $AO = AC = 2$. $D$ and $E$ are points on the extensions of $AB$ and $A C$ respectively such that $OD = OE $ and $BD = \sqrt{2} EC$. Find the value of $OD^2$.
 	\end{block}
 \end{frame}
 \begin{frame}{Practice Problems}
-	\begin{block} {Question 4}
-		(Prelim 2018 Q16) $ABCD$ is a cyclic quadrilateral with $AC=56$, $BD=65$, $BC>DA$ and $\frac{AB}{BC} = \frac{CD}{DA}$. Find the ratio of the area of $\triangle ABC$ to the area of $\triangle ADC$.
+	\begin{block} {Prelim 2018 Q16}
+		$ABCD$ is a cyclic quadrilateral with $AC=56$, $BD=65$, $BC>DA$ and $\frac{AB}{BC} = \frac{CD}{DA}$. Find the ratio of the area of $\triangle ABC$ to the area of $\triangle ADC$.
 	\end{block}
-	\begin{block} {Question 5}
-		(Prelim 2016 Q20) In $\triangle ABC$, $P$ and $Q$ are points on $AB$ and $AC$ respectively such that $AP:PB=8:1$ and $AQ:QC=15:1$.  $X$ and $Y$ are points on $BC$ such that the circumcircle of $\triangle APX$ is tangent to both $BC$ and $CA$, while the circumcircle of  $\triangle AQY$ is tangent to both $AB$ and $BC$. Find $\cos BAC$.
+	\begin{block} {Prelim 2016 Q20}
+		In $\triangle ABC$, $P$ and $Q$ are points on $AB$ and $AC$ respectively such that $AP:PB=8:1$ and $AQ:QC=15:1$.  $X$ and $Y$ are points on $BC$ such that the circumcircle of $\triangle APX$ is tangent to both $BC$ and $CA$, while the circumcircle of  $\triangle AQY$ is tangent to both $AB$ and $BC$. Find $\cos BAC$.
 	\end{block}
 \end{frame}
 
-
 \begin{frame}{The End}
-  \centering \Large
-  \emph{Thank You!}
+	\centering \Large
+	\emph{Thank You!}
 \end{frame}
 \end{document}
