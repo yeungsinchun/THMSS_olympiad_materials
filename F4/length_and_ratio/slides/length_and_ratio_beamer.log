@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.12)  8 JAN 2024 14:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.12)  11 JAN 2024 13:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**geometry.tex
-(./geometry.tex
+**length_and_ratio_beamer.tex
+(./length_and_ratio_beamer.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2022/02/08 v3.66 A class for typesetting presentations
@@ -770,8 +770,8 @@ File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 20.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./geometry.aux)
-\openout1 = `geometry.aux'.
+) (./length_and_ratio_beamer.aux)
+\openout1 = `length_and_ratio_beamer.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
@@ -858,9 +858,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 20.
 LaTeX Info: Redefining \pageref on input line 20.
 LaTeX Info: Redefining \nameref on input line 20.
- (./geometry.out) (./geometry.out)
+ (./length_and_ratio_beamer.out) (./length_and_ratio_beamer.out)
 \@outlinefile=\write5
-\openout5 = `geometry.out'.
+\openout5 = `length_and_ratio_beamer.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 20.
@@ -920,64 +920,69 @@ Dictionary: translator-months-dictionary, Language: English
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./geometry.nav) [1
+) (./length_and_ratio_beamer.nav) [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./geometry.toc) [2
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./length_and_ratio_beamer.toc) [2
 
-] (./geometry.toc) [3
+] (./length_and_ratio_beamer.toc) [3
 
-] (./geometry.toc) [4
+] (./length_and_ratio_beamer.toc) [4
 
-] (./geometry.toc) [5
+] (./length_and_ratio_beamer.toc) [5
 
-] (./geometry.toc) [6
+] (./length_and_ratio_beamer.toc) [6
 
-] (./geometry.toc) [7
+] (./length_and_ratio_beamer.toc) [7
 
-] (./geometry.toc) [8
+] (./length_and_ratio_beamer.toc) [8
+
+] (./length_and_ratio_beamer.toc) [9
 
 ]
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 65.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 55.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 65.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 55.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 65.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 55.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 65.
+(Font)              <10.95> on input line 55.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <8> on input line 55.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 65.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+(Font)              <6> on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 65.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 55.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 65.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 55.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 65.
- [9
-
-] [10
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 55.
+ [10
 
 ] [11
 
 ] [12
 
-] [13
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 104.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 104.
+ [13
 
 ] [14
 
@@ -999,12 +1004,7 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
 
 ] [23
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 227.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 227.
- [24
+] [24
 
 ] [25
 
@@ -1036,10 +1036,7 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
 
 ] [39
 
-]
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 557.
- [40
+] [40
 
 ] [41
 
@@ -1061,63 +1058,91 @@ LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10.95> not available
 
 ] [50
 
-]
-Missing character: There is no P in font nullfont!
-[51
+] [51
 
-]
-Missing character: There is no P in font nullfont!
-[52
+] [52
 
-]
-Missing character: There is no P in font nullfont!
-[53
+] [53
 
-]
-Missing character: There is no P in font nullfont!
-[54
+] [54
 
-]
-Missing character: There is no P in font nullfont!
-[55
+] [55
 
-]
-Missing character: There is no P in font nullfont!
-[56
+] [56
 
 ] [57
 
-] [58
+]
+[58
+
+] [59
+
+] [60
+
+] [61
 
 ]
-Missing character: There is no P in font nullfont!
-[59
-
-]
-Missing character: There is no P in font nullfont!
-[60
-
-]
-Missing character: There is no P in font nullfont!
-[61
-
-]
-Missing character: There is no P in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
 [62
 
 ]
-Missing character: There is no P in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
 [63
 
-] [64
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[64
 
-] [65
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[65
 
-] [66
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[66
 
-] [67
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[67
 
-] [68
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[68
 
 ] [69
 
@@ -1129,69 +1154,102 @@ Missing character: There is no P in font nullfont!
 
 ] [73
 
-] [74
-
-] [75
-
-] [76
-
-] [77
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[74
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1215.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 1215.
- [78
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[75
 
-] [79
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[76
+
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[77
+
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[78
+
+]
+Missing character: There is no A in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no X in font nullfont!
+Missing character: There is no Y in font nullfont!
+Missing character: There is no Z in font nullfont!
+[79
 
 ] [80
 
 ] [81
 
-] [82
-
-] [83
-
-] [84
-
-] [85
-
-] [86
-
 ]
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 1287.
- [87
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 926.
+ [82
 
 ]
 \tf@nav=\write6
-\openout6 = `geometry.nav'.
+\openout6 = `length_and_ratio_beamer.nav'.
 
 \tf@toc=\write7
-\openout7 = `geometry.toc'.
+\openout7 = `length_and_ratio_beamer.toc'.
 
 \tf@snm=\write8
-\openout8 = `geometry.snm'.
+\openout8 = `length_and_ratio_beamer.snm'.
 
- (./geometry.aux)
-Package rerunfilecheck Info: File `geometry.out' has not changed.
-(rerunfilecheck)             Checksum: 0C6FB817D9221F5FF0F5063196BDD192;3128.
+ (./length_and_ratio_beamer.aux)
+Package rerunfilecheck Info: File `length_and_ratio_beamer.out' has not changed.
+(rerunfilecheck)             Checksum: 2E7ED43994BE712037913CB9E0B56C96;1143.
  ) 
 Here is how much of TeX's memory you used:
- 31574 strings out of 478268
- 678920 string characters out of 5846347
- 969051 words of memory out of 5000000
- 48861 multiletter control sequences out of 15000+600000
- 516627 words of font info for 67 fonts, out of 8000000 for 9000
+ 31088 strings out of 478268
+ 666365 string characters out of 5846347
+ 932013 words of memory out of 5000000
+ 48394 multiletter control sequences out of 15000+600000
+ 507328 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,21n,122p,439b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on geometry.pdf (87 pages, 620417 bytes).
+ 128i,19n,122p,454b,1429s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on length_and_ratio_beamer.pdf (82 pages, 470713 bytes).
 PDF statistics:
- 3551 PDF objects out of 3580 (max. 8388607)
- 2911 compressed objects within 30 object streams
- 192 named destinations out of 1000 (max. 500000)
- 3071 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2767 PDF objects out of 2984 (max. 8388607)
+ 2429 compressed objects within 25 object streams
+ 173 named destinations out of 1000 (max. 500000)
+ 1295 words of extra memory for PDF output out of 10000 (max. 10000000)
 

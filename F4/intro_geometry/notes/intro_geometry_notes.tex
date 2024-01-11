@@ -1,4 +1,10 @@
 \documentclass{article}
+
+% Remember to change this and recompile before use!
+\def\today{20 Jan 2024}
+\def\lectureno{8-9}
+\def\classname{MATH5.1EL}
+
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage[utf8]{inputenc}
@@ -8,26 +14,33 @@
 \usepackage{lmodern}
 \usepackage[normalem]{ulem}
 \usepackage{float}
+\usepackage{fancyhdr}
 %\usepackage{showframe}
 \usepackage{mdframed}
 \usetikzlibrary{calc,intersections}
 \tikzset{new/.style={color=red},small label/.style={font=\scriptsize},node label/.style={}}
 
-\title{Introduction to Euclidean Geometry}
+\title{\classname \\ Introduction to Euclidean Geometry}
 \author{T Yeung}
-\date{2024}
+\date{\today}
 
 \DeclareMathOperator{\Pow}{Pow}
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
 \theoremstyle{definition}
 \newtheorem{question}{Question}
 
-\setlength{\parindent}{0pt}
-
 \begin{document}
+\pagestyle{fancy}
+\fancyhead{}\fancyfoot{}
+\fancyhead[L]{\classname}
+\fancyhead[C]{L\lectureno}
+\fancyhead[R]{\today}
 
 \maketitle
+
+\section{Introduction}
+
 In the vast tapestry of mathematical exploration, few realms evoke a sense of elegance and timeless beauty quite like Euclidean geometry. With its origins deeply rooted in ancient Greece, this branch of mathematics has captivated the hearts and minds of scholars and thinkers for centuries.
 \section{Motivation}
 \noindent
@@ -760,7 +773,7 @@ Then two ways of calculating the power of $P$ with respect to the circle: \\ $\P
 			\end{figure}
 		\end{theorem}
 		\begin{proof}
-			$\Pow_\omega = PA^2 = PB^2$
+			$\Pow_\omega(P) = PA^2 = PB^2$
 		\end{proof}
 	\end{mdframed}
 
@@ -823,5 +836,10 @@ Then two ways of calculating the power of $P$ with respect to the circle: \\ $\P
 	\begin{question}
 		(Prelim 2016 Q20) In $\triangle ABC$, $P$ and $Q$ are points on $AB$ and $AC$ respectively such that $AP:PB=8:1$ and $AQ:QC=15:1$.  $X$ and $Y$ are points on $BC$ such that the circumcircle of $\triangle APX$ is tangent to both $BC$ and $CA$, while the circumcircle of  $\triangle AQY$ is tangent to both $AB$ and $BC$. Find $\cos BAC$.
 	\end{question}
+	\vfill
+	\begin{question}
+		(Prelim 2012 Q13) $A B C D$ is a convex quadrilateral in which $A C$ and $B D$ meet at $P$. Given $P A=1$, $P B=2, P C=6$ and $P D=3$. Let $O$ be the circumcentre of $\triangle P B C$. If $O A$ is perpendicular to $A D$, find the circumradius of $\triangle P B C$.
+	\end{question}
+	\vfill
 \end{document}
 

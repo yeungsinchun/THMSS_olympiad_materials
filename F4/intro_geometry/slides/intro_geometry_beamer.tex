@@ -14,7 +14,6 @@
 \title{Introduction to Euclidean Geometry}
 
 \usetheme{Madrid}
-\setbeamersize{text margin left=6mm,text margin right=6mm}
 
 \author{T Yeung}
 \institute{THMSS}
@@ -941,7 +940,7 @@
 
 \begin{frame}{Example Problem 1 (Solution)}
 	\begin{columns}
-		\column{0.35\textwidth}
+		\column{0.5\textwidth}
 		\begin{center}
 			\begin{tikzpicture}[scale=1.6,rotate=20]
 				\tkzDefPoint(0,0){O}
@@ -973,30 +972,28 @@
 				\onslide<3>{
 				}
 			\end{tikzpicture}
-		\end{center}
-		\column{0.65\textwidth}
-		\begin{center}
 			\begin{itemize}
 				\item $AB = 6$, $BC = 7$, $CA=8$
 				\item $D$ is the mid-point of $\overset{\frown}{AB}$
 				\item Find $AD^2$
 			\end{itemize}
+		\end{center}
+		\column{0.5\textwidth}
+		\begin{center}
 			\pause
-			\begin{block}{Solution}
-				\begin{enumerate}
-					\item<2-> Drop a perpendicular line from $D$ to $BA$, that the line passes through $O$.
-					\item<3-> $\Pow_\omega(H)= BH \cdot HA = 9$
-					\item<4-> Another way to compute $\Pow_\omega$ is $DH \cdot HE$.
-					\item<5-> $\mathcal{R}=OD=OE$ is the circumradius of the circle and its given by $\frac{abc}{4\sqrt{s(s-a)(s-b)(s-c)} }$, where $s$ is the semi perimeter.
-				\end{enumerate}
-			\end{block}
+			\begin{enumerate}
+				\item<2-> Drop a perpendicular line from $D$ to $BA$, that the line passes through $O$.
+				\item<3-> $\Pow_\omega(H)= BH \cdot HA = 9$
+				\item<4-> Another way to compute $\Pow_\omega$ is $DH \cdot HE$.
+				\item<5-> $\mathcal{R}=OD=OE$ is the circumradius of the circle and its given by $\frac{abc}{4\sqrt{s(s-a)(s-b)(s-c)} }$, where $s$ is the semi perimeter.
+			\end{enumerate}
 		\end{center}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Example Problem 1 (Solution Cont.)}
+\begin{frame}{Example Problem 1 (Solution cont.)}
 	\begin{columns}
-		\column{0.35\textwidth}
+		\column{0.5\textwidth}
 		\begin{center}
 			\begin{tikzpicture}[scale=1.6,rotate=20]
 				\tkzDefPoint(0,0){O}
@@ -1016,28 +1013,31 @@
 				\tkzLabelPoint[above](O){O}
 				\tkzAutoLabelPoints[center=O](E)
 			\end{tikzpicture}
+			\begin{itemize}
+				\item $AB = 6$, $BC = 7$, $CA=8$
+				\item $D$ is the mid-point of $\overset{\frown}{AB}$
+				\item Find $AD^2$
+			\end{itemize}
 		\end{center}
-		\column{0.65\textwidth}
+		\column{0.5\textwidth}
 		\begin{center}
-			\begin{block}{Solution}
-				\begin{enumerate}
-					\setItemnumber{5}
-					\item $\mathcal{R} = \frac{6 \cdot 7 \cdot 8}{4\sqrt{\frac{21}{2} \cdot \frac{9}{2} \cdot \frac{7}{2} \cdot \frac{5}{2}} } = \frac{16}{\sqrt{15}}$
-					\item 
-						$\begin{aligned}[t]
-							Pow_\omega (H) &= (OE + OH) \cdot (OD - OH) \\
-										   &= (\tfrac{16}{\sqrt{15}})^2 - OH^2 \\
-										   &= 9
-						\end{aligned}$
-						$OH = \frac{11}{\sqrt{15}}$
-					\item 
-						$\begin{aligned}[t]
-							AD^2 &= DH^2 + AH^2 \\
-								 &= (\tfrac{5}{\sqrt{15}})^2 + 3^2 \\
-								 &= \tfrac{32}{3}
-						\end{aligned}$
-				\end{enumerate}
-			\end{block}
+			\begin{enumerate}
+				\setItemnumber{5}
+				\item $\mathcal{R} = \frac{6 \cdot 7 \cdot 8}{4\sqrt{\frac{21}{2} \cdot \frac{9}{2} \cdot \frac{7}{2} \cdot \frac{5}{2}} } = \frac{16}{\sqrt{15}}$
+				\item $\begin{aligned}[t]
+						Pow_\omega (H) &= (OE + OH) \\
+									   &\cdot (OD - OH) \\
+									   &= (\tfrac{16}{\sqrt{15}})^2 - OH^2 \\
+									   &= 9 \\
+						OH &= \frac{11}{\sqrt{15}}
+					\end{aligned}$
+				\item 
+					$\begin{aligned}[t]
+						AD^2 &= DH^2 + AH^2 \\
+							 &= (\tfrac{5}{\sqrt{15}})^2 + 3^2 \\
+							 &= \tfrac{32}{3}
+					\end{aligned}$
+			\end{enumerate}
 		\end{center}
 	\end{columns}
 \end{frame}
@@ -1077,7 +1077,7 @@
 
 \begin{frame}{Example Problem 2 (Solution)}
 	\begin{columns}
-		\column{0.4\textwidth}
+		\column{0.5\textwidth}
 		\begin{center}
 			\begin{tikzpicture}[scale=0.9]
 				\tkzDefPoint(0,0){O}
@@ -1115,14 +1115,13 @@
 					\tkzFillPolygon[color=teal!20,opacity=0.3](H,S,R,C)
 				}
 			\end{tikzpicture}
+			\begin{itemize}
+				\item $AM=9,MN=16,NC=12$
+				\item Circle $\omega$ tangent to $BC$, $CD$, $DA$ at $R,S,T$
+			\end{itemize}
 		\end{center}
-		\column{0.6\textwidth}
-		\begin{itemize}
-			\item $AM=9,MN=16,NC=12$
-			\item Circle $\omega$ tangent to $BC$, $CD$, $DA$ at $R,S,T$
-		\end{itemize}
+		\column{0.5\textwidth}
 		\pause
-		\begin{block}{Solution}
 			\begin{enumerate}
 				\item $\Pow_\omega(A) = -AM \cdot AN = -AS^2 \Rightarrow AS = 15$
 					\pause
@@ -1132,13 +1131,12 @@
 					\pause
 				\item Let $SD=DT=x$, in  $\triangle DHC$, by Pythagoras Theorem, $(x-6)^2+(x+6)^2=AC^2-AH^2$
 			\end{enumerate}
-		\end{block}
 	\end{columns}	
 \end{frame}
 
-\begin{frame}{Example Problem 2 (Solution Cont.)}
+\begin{frame}{Example Problem 2 (Solution cont.)}
 	\begin{columns}
-		\column{0.4\textwidth}
+		\column{0.5\textwidth}
 		\begin{center}
 			\begin{tikzpicture}[scale=0.9]
 				\tkzDefPoint(0,0){O}
@@ -1167,20 +1165,21 @@
 				\tkzLabelPoint[small label,left](H){H}
 				\tkzFillPolygon[color=teal!20,opacity=0.3](H,S,R,C)
 			\end{tikzpicture}
+			\begin{equation*}
+				\begin{split}
+					AM=9,MN=16,NC=12,\\
+					AS=15,CT=CR=SH=6
+				\end{split}
+			\end{equation*}
 		\end{center}
-		\column{0.6\textwidth}
+		\column{0.5\textwidth}
 		\begin{center}
-			\begin{itemize}
-				\item $AM=9,MN=16,NC=12,AS=15,CT=CR=SH=6$
-			\end{itemize}
-			\begin{block}{Solution}
-				\begin{enumerate}
-					\setItemnumber{5}
-					\item Solving $(x-6)^2-(x+6)^2=AC^2-AH^2=27^2-21^2=288$ gives $x=12$. 
-						\pause
-					\item $[ABCD] = AD \cdot CH = (12+15)\sqrt{288} = 324\sqrt{2} $
-				\end{enumerate}
-			\end{block}
+			\begin{enumerate}
+				\setItemnumber{5}
+				\item Solving $(x-6)^2-(x+6)^2=AC^2-AH^2=27^2-21^2=288$ gives $x=12$. 
+					\pause
+				\item $[ABCD] = AD \cdot CH = (12+15)\sqrt{288} = 324\sqrt{2} $
+			\end{enumerate}
 			\pause
 			\begin{block}{Question}
 				Where did we use the parallelogram condition?	
@@ -1207,6 +1206,9 @@
 	\end{block}
 	\begin{block} {Prelim 2016 Q20}
 		In $\triangle ABC$, $P$ and $Q$ are points on $AB$ and $AC$ respectively such that $AP:PB=8:1$ and $AQ:QC=15:1$.  $X$ and $Y$ are points on $BC$ such that the circumcircle of $\triangle APX$ is tangent to both $BC$ and $CA$, while the circumcircle of  $\triangle AQY$ is tangent to both $AB$ and $BC$. Find $\cos BAC$.
+	\end{block}
+	\begin{block}{Prelim 2012 Q13}
+		$A B C D$ is a convex quadrilateral in which $A C$ and $B D$ meet at $P$. Given $P A=1$, $P B=2, P C=6$ and $P D=3$. Let $O$ be the circumcentre of $\triangle P B C$. If $O A$ is perpendicular to $A D$, find the circumradius of $\triangle P B C$.
 	\end{block}
 \end{frame}
 
