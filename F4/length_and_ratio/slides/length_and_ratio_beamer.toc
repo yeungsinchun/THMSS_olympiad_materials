@@ -1,8 +1,0 @@
-\beamer@sectionintoc {1}{Trigonometric Identities}{10}{0}{1}
-\beamer@sectionintoc {2}{The Extended Law of Sine}{12}{0}{2}
-\beamer@sectionintoc {3}{Angle Bisector Theorem}{42}{0}{3}
-\beamer@sectionintoc {4}{Cosine's Law}{59}{0}{4}
-\beamer@sectionintoc {5}{Ceva's Theorem}{62}{0}{5}
-\beamer@sectionintoc {6}{Menelaus's Theorem}{74}{0}{6}
-\beamer@sectionintoc {7}{The Centroid Triangle}{80}{0}{7}
-\beamer@sectionintoc {8}{Practice Problems}{81}{0}{8}
