@@ -1212,6 +1212,116 @@
 	\end{block}
 \end{frame}
 
+\begin{frame}{The Radical Axis and Radical Center (Supplementary) }
+	Three circles intersect as in below.
+	\begin{figure}
+		\begin{tikzpicture}[scale=0.5]
+			\tkzDefPoint(0,0){O1}
+			\tkzDefPoint(2,3){O2}
+			\tkzDefPoint(2.2,0){O3}
+			\tkzDrawCircle[R](O1,2)
+			\tkzDrawCircle[R](O2,2.7)
+			\tkzDrawCircle[R](O3,2.5)
+			\tkzInterCC[R](O1,2)(O2,2.7) \tkzGetPoints{M1}{M2}
+			\tkzDrawSegment(M1,M2)
+			\tkzInterCC[R](O2,2.7)(O3,2.5) \tkzGetPoints{M3}{M4}
+			\tkzDrawSegment(M3,M4)
+			\tkzInterCC[R](O1,2)(O3,2.5) \tkzGetPoints{M5}{M6}
+			\onslide<2->{
+				\tkzDrawSegment[red](M5,M6)
+			}
+		\end{tikzpicture}
+	\end{figure}
+	Are the chords necessarily concurrent?
+\end{frame}
+
+\begin{frame}{The Radical Axis}
+	\begin{definition} [Radical Axis]
+		Given two circles $\omega_1$ and $\omega_2$ with distinct centers, the radical axis of the circles is the set of points $P$ such that 
+		\begin{equation*}
+			\Pow_{\omega_1} (P) = \Pow_{\omega_2}(P)
+		\end{equation*}
+	\end{definition}
+	\begin{theorem}[Radical Axis]
+		Let $\omega_1$ and $\omega_2$ be circles with distinct centers $O_1$ and $O_2$. The radical axis of $\omega_1$ and $\omega_2$ is a straight line perpendicular to $\overline{O_1O_2}$. \\
+		In particular, if $\omega_1$ and $\omega_2$ intersect at two points $A$ and $B$, then the radical axis is $AB$.
+	\end{theorem}
+	\begin{center}
+		\begin{tikzpicture}[scale=0.4,small label]
+			\def\ra{2}
+			\def\rb{2.5}
+			\tkzDefPoint(0,0){O1}
+			\tkzDefPoint(3,0){O2}
+			\tkzDrawCircle[R](O1,\ra)
+			\tkzDrawCircle[R](O2,\rb)
+			\tkzInterCC[R](O1,\ra)(O2,\rb) \tkzGetPoints{A}{B}
+			\tkzDrawLine[dashed,<->](A,B)
+			\tkzLabelPoints[small label, right](A){A}
+			\tkzLabelPoints[small label, right](B){B}
+		\end{tikzpicture}
+		\begin{tikzpicture}[scale=0.4,small label]
+			\def\ra{1}
+			\def\rb{2}
+			\tkzDefPoint(0,0){O1}
+			\tkzDefPoint(3,0){O2}
+			\tkzDrawCircle[R](O1,\ra)
+			\tkzDrawCircle[R](O2,\rb)
+			\tkzDefPoint(1,1.88){A}
+			\tkzDefPoint(1,-1.4){B}
+			\tkzDrawLine[<->,dashed](A,B)
+		\end{tikzpicture}	
+	\end{center}
+\end{frame}
+
+\begin{frame}{Proof of the Radical Axis}
+	Suppose that $O_1=(a,0)$ and $O_2=(b,0)$ in the coordinate plane and the circles have radii $r_1$ and $r_2$ respectively. Then for any point $P = (x,y)$ we have
+	\begin{equation*}
+		\Pow_{\omega_1}(P) = O_1P^2-r_1^2=(x-a)^2+y^2-r_1^2
+	\end{equation*}
+	Similarly,
+	\begin{equation*}
+		\Pow_{\omega_2}(P) = O_2P^2-r_2^2=(x-b)^2+y^2-r_2^2
+	\end{equation*}	
+	Equating the two, we fine the radical axis of $\omega_1$ and $\omega_2$ is the set of points $P=(x,y)$ satisfying
+	\begin{align*}
+		0 &= \Pow_{\omega_1}(P)-\Pow_{\omega_2}(P) \\
+		  &= [(x-a)^2+y^2-r_1^2]-[(x-b)^2+y^2-r_2^2] \\
+		  &= (-2a+2b)x+(a^2-b^2+r_2^2-r_1^2)
+	\end{align*}
+	which is a straight line perpendicular to the x-axis (as $-2a+2b\neq 0$). This implies the result.
+\end{frame}
+
+\begin{frame}{Proof of the Radical Axis Theorem (cont.)}
+	The second part is an immediately corollary. The points $A$ and $B$ have equal power to both circles; therefore, both $A$ and $B$ have equal power (zero) to both circles. Therefore, both $A$ and $B$ lie on the radical axis. Consequently, the radical axis must be the line $AB$ itself.
+\end{frame}
+
+\begin{frame}{The Radical Axis of non-intersecting circles}
+	The construction of radical axis of intersecting circles is easy. \\
+	Bonus: How can you construct the radical axis of non-intersecting circles? \\
+	Let's try on Geogebra.
+\end{frame}
+
+\begin{frame}{The Standard Equation of Circle: $\Pow_\omega((x,y))=0$}
+	As a side remark, the expansion of $\Pow_\omega((x,y)) = 0$ yields  $(x-m)^2+(y-n)^2-r^2=0$. Could you recognize what it is?
+\end{frame}
+
+\begin{frame}{Proof of concurrent chords}
+	Let $l_{12}$ be the radical axis of $\omega_1$ and  $\omega_2$,  and define $l_{23}$ and $l_{13}$ similarly. 
+
+	Let $P$ be the intersection of these two lines. Then
+	\begin{equation*}
+		\begin{split}
+			P \in l_{12} \Rightarrow \Pow_{\omega_1}(P) = \Pow_{\omega_2}(P) \\
+			P \in l_{23} \Rightarrow \Pow_{\omega_2}(P) = \Pow_{\omega_3}(P)
+		\end{split}
+	\end{equation*}
+	which implies $\Pow_{\omega_1}(P) = \Pow_{\omega_3}(P)$. Hence  $P \in l_{31}$. The pairwise radical axes concur at a single point $K$ (except if $O_1$, $O_2$, $O_3$ are collinear), called the \textbf{radical center} of the three circles.
+
+	Note that the converse is also true.
+	\begin{theorem}[Converse of radical center]
+		If $l_{12}$ and $l_{23}$ intersect on $l_{13}$ (i.e., $O_1$, $O_2$ and $O_3$ are not collinear), then the quadrilateral formed by the intersections of $l_{12}$ and $l_{23} $ with $\omega_1$ and $\omega_3$ must concyclic.
+	\end{theorem}
+\end{frame}
 \begin{frame}{The End}
 	\centering \Large
 	\emph{Thank You!}
