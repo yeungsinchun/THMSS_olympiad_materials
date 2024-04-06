@@ -1,0 +1,45 @@
+\documentclass{article}
+
+% Remember to change this and recompile before use!
+\def\today{<insert date>}
+\def\lectureno{<insert lecture no>}
+\def\classname{<insert class here>}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{lmodern}
+\usepackage[normalem]{ulem}
+\usepackage{float}
+\usepackage{fancyhdr}
+%\usepackage{showframe}
+\usepackage{mdframed}
+\usetikzlibrary{calc,intersections}
+\tikzset{new/.style={color=red},small label/.style={font=\scriptsize},node label/.style={}}
+
+\title{\classname \\  <insert title here>}
+\author{T Yeung}
+\date{\today}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}\fancyfoot{}
+\fancyhead[L]{\classname}
+\fancyhead[C]{L\lectureno}
+\fancyhead[R]{\today}
+
+\maketitle
+
+\section{Introduction}
+\section{Motivation}
+\end{document}
+
+

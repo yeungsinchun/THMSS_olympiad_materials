@@ -1,0 +1,337 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{lmodern}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{calc,intersections,patterns}
+\tikzset{new/.style={color=red},small label/.style={font=\scriptsize},node label/.style={}}
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+\DeclareMathOperator{\Pow}{Pow}
+
+\title{Analytic Techniques}
+
+\usetheme{Madrid}
+\author{T Yeung}
+\institute{THMSS}
+\date{2024}
+\begin{document}
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+
+\frame{\titlepage}
+\begin{frame}{Outline}
+	\tableofcontents[pausesections]
+\end{frame}
+
+\section{The Cartesian Coordinates}
+
+\subsection{The Shoelace Formula}
+\begin{frame}{The Shoelace Formula}
+	Consider three points $A = (x_1,y_1)$,$B=(x_2,y_2)$,and $C=(x_1,y_1)$. The \textbf{signed} area of $ABC$ is given by the determinant.
+	\[
+		\frac{1}{2}
+		\begin{vmatrix}
+			x_1 & y_1 & 1 \\
+			x_2 & y_2 & 1 \\
+			x_3 & y_3 & 1
+		\end{vmatrix}
+	\]
+	The signed area is positive if $ABC$ is in a anticlockwise order (left), and negative (right) otherwise.
+	\begin{figure}[H]
+		\begin{tikzpicture}
+			\tkzDefPoint(0,0){O}
+			\tkzDefPoint(0:1){A}
+			\tkzDefPoint(90:1){B}
+			\tkzDefPoint(230:1){C}
+			\tkzDrawPolygon(A,B,C)
+			\tkzAutoLabelPoints[center=O,small label](A,B,C)
+		\end{tikzpicture}
+		\hspace{2cm}
+		\begin{tikzpicture}
+			\tkzDefPoint(0,0){O}
+			\tkzDefPoint(0:1){C}
+			\tkzDefPoint(90:1){B}
+			\tkzDefPoint(230:1){A}
+			\tkzDrawPolygon(A,B,C)
+			\tkzAutoLabelPoints[center=O,small label](A,B,C)
+		\end{tikzpicture}
+	\end{figure}
+	\begin{block}{}
+		The shoelace formula gives an implicit way to test whether point $A$, $B$, and $C$ are collinear. Do you know how?	
+	\end{block}
+\end{frame}
+
+\begin{frame}{2004 AMC 10B Q18}
+	In a right triangle $\triangle ACE$, we have $AC=12$,$CE=16$, and $EA=20$. Points $B$,$D$, and $F$ are located on $AC$,  $CE$,  $EA$ respectively, so that $AB = 3$, $CD = 4$, and  $EF=5$. What is the ratio of the area of  $\triangle DBF$ to that of  $\triangle ACE$?
+	\begin{figure}[H]
+		\begin{tikzpicture}[scale=0.2]
+			\tkzDefPoint(0,0){C}
+			\tkzDefPoint(16,0){E}
+			\tkzDefPoint(0,12){A}
+			\tkzDefPoint(4,0){D}
+			\tkzDefPoint(0,9){B}
+			\tkzDefPoint(12,3){F}
+			\tkzDrawPolygon(A,C,E)
+			\tkzDrawPolygon(B,D,F)
+			\tkzLabelPoint[above left,small label](A){$A$}
+			\tkzLabelPoint[left, small label](B){$B$}
+			\tkzLabelPoint[below left, small label](C){$C$}
+			\tkzLabelPoint[below, small label](D){$D$}
+			\tkzLabelPoint[below right, small label](E){$E$}
+			\tkzLabelPoint[above right, small label](F){$F$}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{2004 AMC 10B Q18 (Solution)}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{figure}[H]
+			\begin{tikzpicture}[scale=0.2]
+				\onslide<2->{\draw[very thin, gray] (-1.4,-1.4) grid (19.4,15.4);}
+				\tkzDefPoint(0,0){C}
+				\tkzDefPoint(16,0){E}
+				\tkzDefPoint(0,12){A}
+				\tkzDefPoint(4,0){D}
+				\tkzDefPoint(0,9){B}
+				\tkzDefPoint(12,3){F}
+				\tkzDrawPolygon(A,C,E)
+				\tkzDrawPolygon(B,D,F)
+				\onslide<1,2> {
+					\tkzLabelPoint[above left,small label](A){$A$}
+					\tkzLabelPoint[left, small label](B){$B$}
+					\tkzLabelPoint[below left, small label](C){$C$}
+					\tkzLabelPoint[below, small label](D){$D$}
+					\tkzLabelPoint[below right, small label](E){$E$}
+					\tkzLabelPoint[above right, small label](F){$F$}
+				}
+				\onslide<3-> {
+					\tkzLabelPoint[above left,small label](A){$A(0,12)$}
+					\tkzLabelPoint[left, small label](B){$B(0,9)$}
+					\tkzLabelPoint[below left, small label](C){$C(0,0)$}
+					\tkzLabelPoint[below, small label](D){$D(4,0)$}
+					\tkzLabelPoint[below right, small label](E){$E(16,0)$}
+					\tkzLabelPoint[above right, small label](F){$F(12,3)$}
+				}
+			\end{tikzpicture}
+		\end{figure}
+		\column{0.5\textwidth}
+		\begin{enumerate}
+			\item<2-> Apply grid
+			\item<3-> Find coordinate
+			\item<4-> Apply shoelace formula:
+				\begin{align*}
+					\frac{1}{2}
+					\begin{vmatrix}
+						x_1 & y_1 & 1 \\
+						x_2 & y_2 & 1 \\
+						x_3 & y_3 & 1
+					\end{vmatrix}
+					&=
+					\frac{1}{2}
+					\begin{vmatrix}
+						0 & 9 & 1 \\
+						4 & 0 & 1 \\
+						12 & 3 & 1
+					\end{vmatrix} \\
+					&= 42
+				\end{align*}
+		\end{enumerate}
+		\onslide<5-> {
+			\begin{block}{}
+				There is an easier way to find the area of this triangle, do you know how?
+			\end{block}
+		}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{2022 Prelim Q9}
+	$ABCD$ is a square with side length $1$. $P$ and $Q$ are points on $AB$ and $BC$ respectively such that $BP = BQ = \frac{1}{\sqrt{2} }$	.  $N$ is the foot of perpendicular from $B$ to $CP$. Find $NQ^2$.
+\end{frame}
+
+\begin{frame}{2022 Prelim Q9 (Solution)}
+	\begin{columns}
+		\column{0.5\textwidth}
+			\begin{figure}[H]
+				\begin{tikzpicture}[scale=2]
+					\draw[->] (0,0) -- (0,1.2);	
+					\draw[->] (0,0) -- (1.2,0);	
+					\tkzDefPoint(1,0){C}
+					\tkzDefPoint(0,0){D}
+					\tkzDefPoint(0,1){A}
+					\tkzDefPoint(1,1){B}
+					\tkzDefPoint(0.292,1){P} % 0.292 = 1 - 1/sqrt(2)
+					\tkzDefPoint(1,0.292){Q} % 0.292 = 1 - 1/sqrt(2)
+					\tkzDrawPolygon(A,B,C,D)
+					\tkzLabelPoint[above left, small label](A){$A(0,1)$}
+					\tkzLabelPoint[above right, small label](B){$B(1,1)$}
+					\tkzLabelPoint[below right, small label](C){$C(1,0)$}
+					\tkzLabelPoint[below left, small label](D){$D(0,0)$}
+					\tkzDrawPoints(A,B,C,D,P,Q)
+					\tkzLabelPoint[right, small label](Q){$Q(1,1-\frac{1}{\sqrt{2}})$}
+					\tkzLabelPoint[above, small label](P){$P(1-\frac{1}{\sqrt{2}},1)$}
+					\tkzDrawSegment(P,C)
+					\tkzDefPointsBy[projection=onto P--C](B){N}
+					\tkzDrawSegment(B,N)
+					\tkzDrawPoint(N)
+					\tkzLabelPoint[right, small label](N){N}
+				\end{tikzpicture}
+			\end{figure}	
+		\column{0.5\textwidth}
+		\begin{enumerate}
+			\item<1-> Set coordinates
+			\item<2-> Calculate the coordinate of $N$
+			\item<3-> Calculate $NQ$
+		\end{enumerate}
+		\begin{block}{Any smarter way?}
+			While this should work out, there is a better way. Do you know how?
+		\end{block}
+	\end{columns}
+\end{frame}
+
+\section{Mass Point Geometry}
+\begin{frame}{Mass Point Geometry}
+Mass point geometry, colloquially known as mass points, is a problem-solving technique in geometry which applies the physical principle of the center of mass to geometry problems involving triangles and intersecting cevians. \\
+All problems that can be solved using mass point geometry can also be solved using either similar triangles, vectors, or area ratios, but many students prefer to use mass points. \\
+Though modern mass point geometry was developed in the 1960s by New York high school students, the concept has been found to have been used as early as 1827 by August Ferdinand Möbius in his theory of homogeneous coordinates. (Wikipedia, 2024).
+\end{frame}
+
+\begin{frame}{Some Physics Background}
+	Given a line segment with masses put on two ends, we can compute the center of mass. For example:
+	\begin{figure}[H]
+		\begin{tikzpicture}
+			\tkzDefPoint(0,0){A}		
+			\tkzDefPoint(5,0){B}		
+			\tkzDrawPoints(A,B)
+			\tkzDrawSegment[very thick](A,B)
+			\tkzLabelPoint[left](A){$A (2kg)$}
+			\tkzLabelPoint[right](B){$B(3kg)$}
+		\end{tikzpicture}
+	\end{figure}
+	We can find the center of mass $P$ which divides $AB$ in $3:2$.
+	\begin{figure}[H]
+		\begin{tikzpicture}
+			\tkzDefPoint(0,0){A}		
+			\tkzDefPoint(5,0){B}		
+			\tkzDrawPoints(A,B)
+			\tkzDrawSegment[very thick](A,B)
+			\tkzLabelPoint[left](A){$A (2kg)$}
+			\tkzDefPoint(3,0){P}
+			\tkzLabelPoint[right](B){$B(3kg)$}
+			\tkzDrawPoint[new](P)
+			\tkzLabelPoint[above,new](P){$P$}
+			\tkzLabelSegment(A,P){$3$}
+			\tkzLabelSegment(P,B){$2$}
+		\end{tikzpicture}
+	\end{figure}
+	\begin{block}{Intuition}
+		The center of mass is the location where a pole can support the rod without the rod tilting. \\
+		Since $B$ is heavier than $A$, the center of mass should be closer to $B$ than $A$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Center of Mass of Triangle}
+	The \textbf{center of mass} of a triangle, also called the \textbf{centroid} (yes, the centroid you have learnt before) of the triangle, can be compute with a two step process. For example,
+	\begin{figure}[H]
+		\begin{tikzpicture}
+			\tkzDefPoint(0,0){A}		
+			\tkzDefPoint(5,0){B}		
+			\tkzDefPoint(3,2){C}		
+			\tkzDrawPolygon(A,B,C)
+			\tkzDrawPoints(A,B,C)
+			\tkzLabelPoint[small label,below left](A){$A(5kg)$}
+			\tkzLabelPoint[small label,below right](B){$B(6kg)$}
+			\tkzLabelPoint[small label,above](C){$C(8kg)$}
+			\tkzDefBarycentricPoint(A=5,B=6) \tkzGetPoint{G}
+			\onslide<2->{
+				\tkzDrawPoint[new](G)
+				\tkzLabelPoint[small label,below, new](G){$G(11kg)$}
+				\tkzLabelSegment[small label,below, new](A,G){6}
+				\tkzLabelSegment[small label,below, new](G,B){5}
+				\tkzDrawSegment[red](C,G)
+				\tkzDefBarycentricPoint(C=8,G=11) \tkzGetPoint{P}
+				\tkzDrawPoint[new](P)
+				\tkzLabelPoint[small label, right, new](P){$P$}
+				\tkzLabelSegment[small label, left, new](C,P){11}
+				\tkzLabelSegment[small label, left, new](P,G){8}
+			}
+		\end{tikzpicture}
+	\end{figure}
+	\onslide<2-> {
+	We can find the center of mass of $A$ and $B$ first at $G$. Then we find the center of mass of $G$ and $C$ at $P$. $P$ is our desired center of mass.
+	}
+	\onslide<3-> {
+	\begin{block}{Centroid}
+		The centroid you learnt before assume equal mass distribution at three points.
+	\end{block}
+	}
+\end{frame}
+
+\begin{frame}{Mass Point Geometry 101}
+	Continuing on our previous example, now we produce $PA$ to meet at $BC$ at $H$. What is $CH:HB$?
+	\begin{figure}[H]
+		\begin{tikzpicture}
+			\tkzDefPoint(0,0){A}		
+			\tkzDefPoint(5,0){B}		
+			\tkzDefPoint(3,2){C}		
+			\tkzDrawPolygon(A,B,C)
+			\tkzDrawPoints(A,B,C)
+			\tkzLabelPoint[small label,below left](A){$A(5kg)$}
+			\tkzLabelPoint[small label,below right](B){$B(6kg)$}
+			\tkzLabelPoint[small label,above](C){$C(8kg)$}
+			\tkzDefBarycentricPoint(A=5,B=6) \tkzGetPoint{G}
+			\tkzDrawPoint(G)
+			\tkzLabelPoint[small label,below](G){$G(11kg)$}
+			\tkzLabelSegment[small label,below](A,G){6}
+			\tkzLabelSegment[small label,below](G,B){5}
+			\tkzDrawSegment(C,G)
+			\tkzDefBarycentricPoint(C=8,G=11) \tkzGetPoint{P}
+			\tkzDrawPoint(P)
+			\tkzLabelPoint[small label, right](P){$P$}
+			\tkzLabelSegment[small label, left](C,P){11}
+			\tkzLabelSegment[small label, left](P,G){8}
+			\tkzInterLL(A,P)(C,B) \tkzGetPoint{H}
+			\tkzDrawPoint[new](H)
+			\tkzLabelPoint[small label,right, new](H){$H$}
+			\tkzDrawSegment[new](A,H)
+		\end{tikzpicture}
+	\end{figure}
+	\onslide<2-> {
+	We can utilize the fact that center of mass of anything is unique and there are many ways to compute it. For example, an alternative way of computing the center of mass of this figure is to compute the center of mass of $CB$ first, then then compute the center of mass of the result and $A$. Hence, $H$ must be the center of mass of $BC$ and $CH:BH = 3:4$.
+	}
+\end{frame}
+
+\begin{frame}{Mass Point Geometry 102}
+	In fact, much of the power of mass point geometry comes from the fact that \textbf{center of mass is unique} and \textbf{there are different ways of computing center of masses}. \\
+	Usually we assign the mass of a triangle based on the side lengths given in a triangle.
+\end{frame}
+
+\begin{frame}{Example Problem 1 (From Wikipedia)}
+	In triangle $ABC$, $E$ is on $AC$ so that $CE = 3AE$ and $F$ is on  $AB$ so that $BF = 3AF$. If $BE$ and $CF$ intersect at $O$ and line $AO$ intersects $BC$ at $D$, compute $\frac{OB}{OE}$ and $\frac{OD}{OA}$.
+\end{frame}
+
+\begin{frame}{Example Problem 1 (Solution)}
+	\begin{columns}
+		\column{0.5\textwidth}
+		In triangle $ABC$, $E$ is on $AC$ so that $CE = 3AE$ and $F$ is on  $AB$ so that $BF = 3AF$. If $BE$ and $CF$ intersect at $O$ and line $AO$ intersects $BC$ at $D$, compute $\frac{OB}{OE}$ and $\frac{OD}{OA}$.
+		\begin{figure}[H]
+			\begin{tikzpicture}
+				
+			\end{tikzpicture}
+		\end{figure}
+		\column{0.5\textwidth}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{The End}
+\centering \Large
+\emph{Thank You!}
+\end{frame}
+
+\end{document}
+
+

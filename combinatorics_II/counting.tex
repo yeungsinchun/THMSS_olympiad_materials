@@ -1,0 +1,217 @@
+\documentclass[addpoints]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{svg}
+\usepackage{pgfplots}
+\usepackage{bm}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{prob}{Problem}[section]
+\pgfplotsset{width=10cm,compat=1.9}
+\title{MATH5.1EL L2 \\ Counting}
+\author{T Yeung}
+\date{}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{\underline{Solution:}}\par\noindent}
+
+\pagestyle{headandfoot}
+
+\runningheadrule
+\runningheader{Math 5.1EL}{L2}{27 Oct 2023}
+\footer{}{Page \thepage\ of \numpages}{}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+\makebox[\textwidth]{Name, class, class no.:\enspace\hrulefill}
+\vspace{0.3in}
+\makebox[\textwidth]{Tutor’s name:\enspace\hrulefill}
+
+\section{Permutation of sets}
+\begin{defn}
+An $r$-permutation of $n$ objects is a linearly ordered selection of $r$ objects from a source (set $S$) of $n$ objects. The number of $r$-permutations of $n$ objects is denoted by
+\begin{equation*}
+	P(n, r)
+\end{equation*}
+An $n$-permutation of $n$ objects is just called a permutation of $n$ objects. The number of permutations of $n$ objects is denoted by $n!$, read "$n$ factorial".
+\end{defn}
+
+\begin{theorem}
+The number of $r$-permutations of an $n$-set equals
+\begin{equation*}
+	P(n, r) = n(n-1)\ldots(n-r+1)= \frac{n!}{(n-r)!}
+\end{equation*}
+\end{theorem}
+
+\begin{exmp}
+	Find the number of words that can be formed by rearranging letters in the word "LOOT".
+\end{exmp}
+
+\begin{exmp}
+	Find the number of 7-digit numbers in base 10 such that all digits are nonzero, distinct, and the digits 8 and 9 do not appear next to each other.
+\end{exmp}
+
+\subsection{Circular Permutation}
+\begin{defn}
+	A \textbf{circular $r$-permutation} of a set $S$ is an ordered $r$ objects of $S$ arranged as a circle.
+\end{defn}
+
+\begin{theorem}
+	The number of circular $r$-permutations of an $n$-set equals
+	\begin{equation*}
+		\frac{P(n, r)}{r} = \frac{n!}{(n-r)!r}
+	\end{equation*}.
+\end{theorem}
+
+\begin{corollary}
+	The number of circular permutations of an n-set is 
+	\begin{equation*}
+		(n - 1)!
+	\end{equation*}
+\end{corollary}
+
+\begin{exmp}
+	Twelve people, including two who do not wish to sit next to each other, are to be seated at a round table. How many circular seating plans can be made?	
+\end{exmp}
+
+\begin{exmp}
+	We are to seat 5 men, 5 women, and 1 dog in a circular arrangement around a round table. In how many ways can this be done if no man is to sit next to a man and no woman is to sit next to a woman.
+\end{exmp}
+
+\begin{exmp}
+	In how many ways can eight rooks be arranged in an 8x8 checkerboard so that no rooks attack each other?
+\end{exmp}
+
+\section{Combination of sets}
+\begin{defn}
+A \textbf{combination} is a collection of objects (order is immaterial) from a given set. An \textbf{$r$-combination} of an $n$-set S is an $r$-subset of $S$. We denote by $\binom{n}{r}$ the number of $r$-combinations of an $n$-set, read "$n$ choose $r$".
+\end{defn}
+
+\begin{theorem}
+	The number of $r$-combinations of an $n$-set equals
+	\begin{equation*}
+		\binom{n}{r} = \frac{n!}{r!(n-r)!} = \frac{P(n, r)}{r!}
+	\end{equation*}.
+\end{theorem}
+
+\begin{exmp}
+	Assume 6A has 30 students, 6B has 31 students, 6C has 32 students. Find the number of ways to pick 2 students from each class.
+\end{exmp}
+
+\begin{exmp}
+	How many 8-letter words can be constructed from 26 letters of the alphabets if each word contains 3, 4, or 5 vowels? There is no restriction of the number of times a letter can be used in a word.	
+\end{exmp}
+
+\begin{corollary}
+	\begin{equation*}
+		\binom{n}{r} = \binom{n}{n-r}
+	\end{equation*}
+\end{corollary}
+
+\begin{theorem}
+	(Binomial Expansion) For non-negative integer $n$,
+	\begin{equation*}
+		(x+y)^n = \binom{n}{0} x^n + \binom{n}{1}x^{n-1}y + \ldots + \binom{n}{n-1}xy^{n-1} + \binom{n}{n}y^n = \sum_{i=0}^n \binom{n}{i} x^{n-i} y^{i}
+	\end{equation*}
+\end{theorem}
+
+\begin{exmp}
+	Expand $(x+y)^5$.
+\end{exmp}
+
+\begin{exmp}
+	Expand $(2x+\frac{y}{3})^4$.
+\end{exmp}
+
+\begin{exmp}
+	Find the last 2 digits of $11^{9999}$ by binomial theorem.
+\end{exmp}
+
+\begin{exmp}
+	(IMO prelim 2018) Find the last 4 digits of $2^{27653}-1$.
+\end{exmp}
+
+\begin{theorem}
+	The number of subsets of an n-set S equals
+	\begin{equation*}
+		\binom{n}{0} + \binom{n}{1} + \ldots \binom{n}{n} = 2^n
+	\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+	The number of ways to place $n$ distinct objects into $k$ distinct boxes, so that the 1st, 2nd, \ldots, kth boxes contain $n_1, n_2, \ldots, n_k$ objects, respectively, equals
+	\begin{equation*}
+		\binom{n}{n_1,n_2,\ldots,n_k} = \frac{n!}{n_1!n_2!\ldots n_k!}
+	\end{equation*}
+\end{theorem}
+
+\begin{exmp}
+	How many ways can 5 distinct objects be put into three distinct boxes so that the 1st, 2nd, and 3rd boxes contain 2, 2, and 1 objects respectively?
+\end{exmp}
+
+\begin{theorem}
+	(Multinomial theorem)	
+	\begin{equation*}
+		(x_1 + \ldots + x_k)^n = \sum_{\substack{n_1+\ldots+n_k=n \\ n_1\geq 0,\ldots,n_k\geq 0}} \binom{n}{n_1,\ldots,n_k} x_1^{n_1}\ldots x_k^{n_k}
+	\end{equation*}
+\end{theorem}
+
+\begin{exmp}
+	Expand $(x + y + z)^3$.
+\end{exmp}
+
+\section{Permutations of multisets}
+Let $M$ be a multiset of $n$ elements of $k$ types, having 1st, 2nd, \ldots, kth type of objects repeated $n_1, n_2, \ldots, n_k$ times, respectively. We say $M$ is a \textbf{multiset of type} $(n_1,\ldots,n_k)$ with $n = n_1 + \ldots + n_k$ objects.
+\begin{theorem}
+	Let $M$ be a multiset of $k$ distinct types where each type has infinitely many elements. Then the number of r-permutations of $M$ equals
+	\begin{equation*}
+		k^r
+	\end{equation*}
+This is also the number of linearly ordered selections of $r$ objects from a source of $k$ distinct objects with repetition allowed.
+\end{theorem}
+\begin{theorem}
+	The number of permutations of an $n$-multiset $M$ of type $(n_1,n_2,\ldots,n_k)$ is
+	\begin{equation*}
+		\binom{n}{n_1,\ldots,n_k} = \frac{n!}{n_1!\ldots n_k!}
+	\end{equation*}
+\end{theorem}
+\begin{exmp}
+	How many ways are there to arrange the word "MISSISSIPPI"? How about "MATHEMATICS"?
+\end{exmp}
+\begin{exmp}
+	Find the number of 8-permutations of the multiset
+	\begin{equation*}
+		M = \{a, a, a, b, b, c, c, c, c\} = \{3a, 2b, 4c\}
+	\end{equation*}
+\end{exmp}
+
+\section{Practice Problems}
+\begin{prob}
+	Find the number of diagonals in a 100-side convex polygon.	
+\end{prob}
+\begin{prob}
+	\item How many odd positive $3$-digit integers are divisible by $3$ but do not contain the digit $3$?
+\end{prob}
+\begin{prob}
+	The eighth grade class at Lincoln Middle School has $93$ students. Each student takes a math class or a foreign language class or both. There are $70$ eighth graders taking a math class, and there are $54$ eighth graders taking a foreign language class. How many eighth graders take only a math class and not a foreign language class?
+\end{prob}
+\begin{prob}
+	A 10-digit arrangement $0,1,2,3,4,5,6,7,8,9$ is called beautiful if (i) when read left to right, $0,1,2,3,4$ form an increasing sequence, and $5,6,7,8,9$ form a decreasing sequence, and (ii) $0$ is not the leftmost digit. For example, $9807123654$ is a beautiful arrangement. Determine the number of beautiful arrangements.
+\end{prob}
+\begin{prob}
+	 The expression
+
+\[(x+y+z)^{2006}+(x-y-z)^{2006}\]
+is simplified by expanding it and combining like terms. How many terms are in the simplified expression?
+\end{prob}
+\end{document}

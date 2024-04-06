@@ -1,0 +1,134 @@
+\documentclass{exam}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{svg}
+\usepackage{float}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[section]
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}[section]
+
+\title{MATH5.1EL L4 \\ More on Counting}
+\author{T Yeung}
+\date{11 Nov 2023}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{\underline{Solution:}}\par\noindent}
+
+\pagestyle{headandfoot}
+
+\runningheadrule
+\runningheader{Math 4.1EL}{L2-3}{11 Nov 2023}
+\footer{}{Page \thepage\ of \numpages}{}
+
+\setlength{\parindent}{0pt}
+\newcommand{\hbinom}[2]{\genfrac{<}{>}{0pt}{}{#1}{#2}}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+\makebox[\textwidth]{Name, class, class no.:\enspace\hrulefill}
+\vspace{0.3in}
+\makebox[\textwidth]{Tutor’s name:\enspace\hrulefill}
+
+\section{Combinations of multisets}
+\begin{defn}
+	
+An $r$-combination of a multiset $M$ is an unordered collection of $r$ objects from $M$. Thus an $r$-combination of $M$ is itself an $r$-multisubset of $M$. An $r$-combination of a multiset
+$$
+M=\left\{\infty a_1, \infty a_2, \ldots, \infty a_n\right\}
+$$
+is also called an $r$-combination with repetition allowed of the $n$-set $S=\left\{a_1, a_2, \ldots, a_n\right\}$. The number of $r$-combinations with repetition allowed of an $n$-set is denoted by
+\begin{equation*}
+	\hbinom{n}{r}
+\end{equation*}
+\end{defn}
+
+\begin{theorem}
+	
+The number of $r$-combinations with repetition allowed of an $n$-set is given by
+$$
+\hbinom{n}{r}
+=\left(\begin{array}{c}
+n+r-1 \\
+r
+\end{array}\right)=\left(\begin{array}{c}
+n+r-1 \\
+n-1
+\end{array}\right) .
+$$
+\end{theorem}
+
+\begin{corollary}
+$\hbinom{n}{r}$ is the number of nonnegative integer solutions of the equation
+$$
+x_1+x_2+\cdots+x_n=r .
+$$
+\end{corollary}
+
+\begin{corollary}
+	$\hbinom{n}{r}$ is the number of nondecreasing sequences of length $r$, whose terms are members of the set $[n]:=\{1,2, \ldots, n\}$.
+\end{corollary}
+
+\begin{exmp}
+Find the number of nonnegative integer solutions for the equation
+$$
+x_1+x_2+x_3+x_4 = 19 .
+$$
+\end{exmp}
+
+\begin{exmp}
+Find the number of nonnegative integer solutions for the equation
+$$
+x_1+x_2+x_3+x_4 < 19 .
+$$
+\end{exmp}
+
+\section{Practice}
+Now you have know the basics of counting. In particular, we have seen what $\binom{n}{r}$ and $\hbinom{n}{r}$ counts. It's time for more practice.
+
+\begin{prob}
+In how many different ways can five persons be seated on a bench?
+\end{prob}
+\begin{prob}
+How many three-digit odd numbers can be formed with the digits $1,2, \ldots, 9$ if no digit is repeated in any number?
+\end{prob}
+\begin{prob}
+In how many ways can three boys and three girls be seated in a row if boys and girls alternate?
+\end{prob}
+\begin{prob}
+In how many ways can two letters be mailed if five letter boxes are available?
+\end{prob}
+\begin{prob}
+In how many ways can 10 boys take positions in a straight line if two particular boys must not stand side by side?
+\end{prob}
+\begin{prob}
+In how many ways can the offices of chairman, vice-chairman, secretary, and treasurer be filled from a committee of seven?
+\end{prob}
+\begin{prob}
+How many three-digit numbers greater than 300 can be formed with the digits $1,2, \ldots, 6$ if no digit is repeated in any number?
+\end{prob}
+\begin{prob}
+A bag contains nine balls numbered $1,2, \ldots, 9$. In how many ways can two balls be drawn so that (a) both are odd? (b) their sum is odd?
+\end{prob}
+\begin{prob}
+Two dice can be tossed in 36 ways. In how many of these is the sum equal to (a) 4 ; (b) 7 ; (c) 11 ?
+\end{prob}
+\begin{prob}
+Four delegates are to be chosen from eight members of a club. (a) How many choices are possible? (b) How many contain member A? (c) How many contain A or B but not both?
+\end{prob}
+\begin{prob}
+How many committees of two or more can be selected from 10 people?
+A lady gives a dinner party for six guests. (a) In how many ways may they be selected from among 10 friends? (b) In how many ways if two of the friends will not attend the party together?	
+\end{prob}
+
+\end{document}
+

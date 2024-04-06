@@ -1,0 +1,78 @@
+\documentclass[addpoints]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{svg}
+\usepackage{pgfplots}
+\usepackage{bm}
+\pgfplotsset{width=10cm,compat=1.9}
+\title{MATH5.1EL L2 \\ Combinatorics}
+\author{T Yeung}
+\date{}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{\underline{Solution:}}\par\noindent}
+
+\pagestyle{headandfoot}
+
+\runningheadrule
+\runningheader{Math 5.1EL}{L2}{14 Oct 2023}
+\footer{}{Page \thepage\ of \numpages}{}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+	\fbox{\fbox{\parbox{5.5in}{\centering
+				Answer the questions in the spaces provided on the
+				question sheets. If you do not know how to answer 
+				a certain question, write down where you get stuck.
+				Answers can be corrected to 3 significant figures
+				if necessary.
+	}}}
+\end{center}
+\vspace{0.1in}
+\makebox[\textwidth]{Name, class, class no.:\enspace\hrulefill}
+\vspace{0.3in}
+\makebox[\textwidth]{Tutor’s name:\enspace\hrulefill}
+
+\section{The Josephus Problem}
+We start with $n$ people numbered $1$ to $n$ around a circle, and we eliminate every second remaining person until only one survives. \\
+For example, for the starting configuration for $n = 10$. The elimination order is $2, 4, 6, 8, 10, 3, 7, 1, 9$, so $5$ survives. The problem is to determine to survivor's number, $J(n)$.
+
+\newpage
+\section{The problem of Nim game}
+Nim is a game played by two players with heaps of coins. Suppose there are $k \geq 1$ heaps of coins which contain, respectively, $n_1, \ldots, n_k$ coins. The objective of the game is to select the last coin. The rule of the game are as follows:
+\begin{enumerate}
+	\item The players alternate turns (let us call the player who makes the first move I and then call the other player II)
+	\item Each player, when it is their turn, selects one of the heaps and removes one or more coins from the selected heap. (The player may take all of the coins from the selected heap.
+\end{enumerate}
+The game ends when all the heaps are empty. The last player to make a move, that is, the player who takes the last coin(s), is the winner.
+
+\noindent
+\subsection*{In this problem, you will:}
+\begin{enumerate}
+	\item[(a)] Decide the winner of the game when there are $2$ heaps.
+	\item[(b)] Decide the winner of the game when there are $> 2$ heaps.
+\end{enumerate}
+\newpage
+
+\section{Counting}
+\begin{enumerate}
+	\item[(a)] How many two-digit numbers have distinct digits?
+	\item[(b)] How many odd numbers between $1000$ and $9999$ have distinct digits.
+	\item[(c)] How many ways can we make a basket from fruits from $6$ oranges, $7$ apples, and $8$ bananas so that the basket contains at least two apples and one bananas?
+	\item [(d)] How many integers between $0$ and $10,000$ have exactly one digit equal to $5$?
+	\item [(e)] How many distinct 5-digit numerals can be constructed out of the digits $1, 1, 1, 6, 8$?
+	\item [(f)] (Permutation) Find the number of $r-permutations$ of an $n-set$.
+	\item[(g)] What is the number of ways to arrange the $26$ alphabets so that no two of the vowels $a, e, i, o, u$ occur next to each other?
+	\item[(h)] Find the number of $7-$digit numbers such that all digits are non-zero, distinct, and the digits $8$ and $9$ do not appear next to each other.
+	\item[(i)] (Circular Permutation) Twelve people, including two who do not wish to sit next to each other, are to be seated at a round table. How many circular seating plans can be made?
+	\item [(j)] (Combination) How many $8-$letter words can be constructed from $26$ letters if each word contains $3, 4,$ or $5$ vowels?
+\end{enumerate}
+
+
+
+\end{document}
